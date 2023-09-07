@@ -6,10 +6,22 @@ import pandas as pd
 
 class KMeans:
     
-    def __init__():
-        # NOTE: Feel free add any hyperparameters 
-        # (with defaults) as you see fit
-        pass
+    def __init__(self, K: int) -> None:
+        self.K = K
+        self.centroids = None
+    
+    # K-means++ initialization
+    def init_centroids(self, X: np.ndarray):
+        if X.shape[0] < self.K:
+            raise ValueError("Can't have more centroids than data points.")
+
+        init_index = [np.random.randint(0, X.shape[0])] # First centroid chosen randomly
+        centroids = [X[init_index[0]]]                  # List of centroids chosen
+
+        for i in range(1, self.K):
+            distances = np.array([min(euclidean_distance(x-c)**2 for c in centroids) for x in X])
+
+
         
     def fit(self, X):
         """
@@ -154,4 +166,3 @@ def euclidean_silhouette(X, z):
     b = (D + inf_mask).min(axis=1)
     
     return np.mean((b - a) / np.maximum(a, b))
-  
