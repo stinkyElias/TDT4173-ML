@@ -1,28 +1,16 @@
 import numpy as np 
-import pandas as pd 
+import pandas as pd
+import copy
 # IMPORTANT: DO NOT USE ANY OTHER 3RD PARTY PACKAGES
 # (math, random, collections, functools, etc. are perfectly fine)
 
 
 class KMeans:
-    
-    def __init__(self, K: int) -> None:
-        self.K = K
+    def __init__(self):
+        self.K = 2   # clearly two distinct clusters
         self.centroids = None
-    
-    # K-means++ initialization
-    def init_centroids(self, X: np.ndarray):
-        if X.shape[0] < self.K:
-            raise ValueError("Can't have more centroids than data points.")
-
-        init_index = [np.random.randint(0, X.shape[0])] # First centroid chosen randomly
-        centroids = [X[init_index[0]]]                  # List of centroids chosen
-
-        for i in range(1, self.K):
-            distances = np.array([min(euclidean_distance(x-c)**2 for c in centroids) for x in X])
-
-
-        
+        self.maxIter = 300
+                
     def fit(self, X):
         """
         Estimates parameters for the classifier
@@ -31,8 +19,37 @@ class KMeans:
             X (array<m,n>): a matrix of floats with
                 m rows (#samples) and n columns (#features)
         """
-        # TODO: Implement
-        raise NotImplemented()
+        X_ = copy.deepcopy(X)
+        
+        # create initial centroids according to k-means++
+        self.centroids = [X[np.random.choice(X.shape[0])]]
+        print(self.centroids)
+        # for _ in range(1, self.K):
+        #     distances = np.array([min(euclidean_distance(x, c) for c in self.centroids) for x in X], axis=0)
+        #     probability = distances/np.sum(distances)
+        #     newCentroidIdx, = X[np.random.choice(X.shape[0], p=probability)]
+        #     self.centroids.append(X[newCentroidIdx])
+
+        # iter = 0
+        # prevCentroids = None
+        # while np.not_equal(self.centroids, prevCentroids).any() and iter < self.maxIter:
+        #     # sort each data point
+        #     sortedPoints = [[] for _ in range(self.K)]
+        #     for x in X:
+        #         distances = euclidean_distance(x, self.centroids)
+        #         centroidIdx = np.argmin(distances)
+        #         sortedPoints[centroidIdx].append(x)
+
+        #     prevCentroids = self.centroids
+        #     self.centroids = [np.mean(cluster, axis=0) for cluster in sortedPoints]
+
+        #     for i, centroid in enumerate(self.centroids):
+        #         if np.isnan(centroid).any():
+        #             self.centroids[i] = prevCentroids[i]
+            
+        #     iter += 1
+
+        # raise NotImplemented()
     
     def predict(self, X):
         """
@@ -50,7 +67,7 @@ class KMeans:
             there are 3 clusters, then a possible assignment
             could be: array([2, 0, 0, 1, 2, 1, 1, 0, 2, 2])
         """
-        # TODO: Implement 
+
         raise NotImplemented()
     
     def get_centroids(self):
@@ -69,9 +86,7 @@ class KMeans:
         ])
         """
         pass
-    
-    
-    
+
     
 # --- Some utility functions 
 
