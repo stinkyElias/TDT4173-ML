@@ -1,16 +1,19 @@
 import numpy as np 
-import pandas as pd 
+import pandas as pd
+import copy
 # IMPORTANT: DO NOT USE ANY OTHER 3RD PARTY PACKAGES
 # (math, random, collections, functools, etc. are perfectly fine)
 
 
 class KMeans:
-    
-    def __init__():
-        # NOTE: Feel free add any hyperparameters 
-        # (with defaults) as you see fit
-        pass
+    def __init__(self, K: int, normalize: bool):
+        self.K = K   # clearly two distinct clusters
+        self.centroids = None
+        self.maxIter = 300
+        self.X = None
+        self.normalize = normalize
         
+                    
     def fit(self, X):
         """
         Estimates parameters for the classifier
@@ -19,8 +22,27 @@ class KMeans:
             X (array<m,n>): a matrix of floats with
                 m rows (#samples) and n columns (#features)
         """
-        # TODO: Implement
-        raise NotImplemented()
+        if self.normalize:
+            X = normalize(X)
+        
+        self.X = X
+
+        self.centroids = kmeans_plusplus_init(self.X, self.K)
+
+        for _ in range(self.maxIter):
+            sortedPoints = [[] for _ in range(self.K)]
+            
+            for x in self.X.to_numpy():
+                # assign data points to closest centroid
+                distance = euclidean_distance(x, self.centroids)
+                centroidIdx = np.argmin(distance)
+                sortedPoints[centroidIdx].append(x)
+
+            prev_centroid = self.centroids
+            self.centroids = [np.mean(cluster, axis=0) for cluster in sortedPoints]
+            for i, centroid in enumerate(self.centroids):
+                if np.isnan(centroid).any():
+                    self.centroids[i] = prev_centroid[i]
     
     def predict(self, X):
         """
@@ -38,8 +60,17 @@ class KMeans:
             there are 3 clusters, then a possible assignment
             could be: array([2, 0, 0, 1, 2, 1, 1, 0, 2, 2])
         """
-        # TODO: Implement 
-        raise NotImplemented()
+        centroids = []
+        centroidIndexes = []
+        for x in X.to_numpy():
+            distance = euclidean_distance(x, self.centroids)
+            centroidIdx = np.argmin(distance)
+            centroids.append(self.centroids[centroidIdx])
+            centroidIndexes.append(centroidIdx)
+        
+        centroidIndexes = np.array(centroidIndexes)
+
+        return centroidIndexes
     
     def get_centroids(self):
         """
@@ -56,10 +87,9 @@ class KMeans:
             [xm_1, xm_2, ..., xm_n]
         ])
         """
-        pass
-    
-    
-    
+        self.centroids = np.array(self.centroids)
+        return self.centroids
+
     
 # --- Some utility functions 
 
@@ -108,10 +138,10 @@ def euclidean_distortion(X, z):
     
     distortion = 0.0
     clusters = np.unique(z)
-    for i, c in enumerate(clusters):
+    for _, c in enumerate(clusters):
         Xc = X[z == c]
         mu = Xc.mean(axis=0)
-        distortion += ((Xc - mu) ** 2).sum(axis=1)
+        distortion += ((Xc - mu) ** 2).sum()
         
     return distortion
 
@@ -154,4 +184,25 @@ def euclidean_silhouette(X, z):
     b = (D + inf_mask).min(axis=1)
     
     return np.mean((b - a) / np.maximum(a, b))
-  
+
+def normalize(d: pd.DataFrame) -> pd.DataFrame:
+    '''
+    Normalize the data along axis 0
+    '''
+    mean = np.mean(d, axis=0)
+    standard_deviation = np.std(d, axis=0)
+
+    return (d-mean)/standard_deviation
+
+def kmeans_plusplus_init(X: pd.DataFrame, clusters: int) -> np.ndarray:
+    '''
+    Initialize centroids with KMeans++
+    '''
+    centroids = np.array([X.iloc[np.random.choice(X.shape[0])]])
+
+    for _ in range(clusters-1):
+        distances = np.array([min([euclidean_distance(x, c) for c in centroids]) for x in X.to_numpy()])
+        next_centroid = np.array([X.iloc[np.random.choice(X.shape[0], p=distances/distances.sum())]])
+        centroids = np.append(centroids, next_centroid, axis=0)
+
+    return centroids
