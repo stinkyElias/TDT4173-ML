@@ -22,16 +22,19 @@ class LogisticRegression:
             y (array<m>): a vector of floats containing 
                 m binary 0.0/1.0 labels
         """
-        self.w = np.zeros(X.shape[0])       # weights
-        print(self.w.T.shape)
-        print(X.shape)
+        self.w = np.zeros(X.shape[1])       # weights
         self.b = 0                          # bias
 
         for _ in range(self.iterations):
-            y_hat = np.matmul(self.w.T, X) + self.b
+            y_hat = np.dot(X, self.w) + self.b
             prediction = sigmoid(y_hat)
+            
             loss = binary_cross_entropy(y, prediction)
+            
             wError, bError = gradients(X, y, prediction)
+            
+            self.w -= self.learningRate*wError
+            self.b -= self.learningRate*bError
             
     def predict(self, X):
         """
@@ -46,14 +49,11 @@ class LogisticRegression:
         Returns:
             A length m array of floats in the range [0, 1]
             with probability-like predictions
-        """
-        # Z = 1/(1+np.exp(-(X.dot(self.w)+self.b)))
-        # Y = np.where(Z>=0.5, 1, 0)
-
-        # return Y
-        pass
+        """        
+        prediction = np.dot(X, self.w) + self.b
+        probabilities = sigmoid(prediction)
         
-
+        return np.array([1 if p >= 0.5 else 0 for p in probabilities])
         
 # --- Some utility functions 
 
@@ -112,7 +112,7 @@ def sigmoid(x):
 def gradients(X, y_true, y_pred):
     delta = y_pred - y_true
     db = np.mean(delta)
-    dw = np.matmul(X, delta)
+    dw = np.dot(delta, X)
     dw = np.array([np.mean(gradient) for gradient in dw])
     
     return dw, db
