@@ -6,10 +6,11 @@ import pandas as pd
 
 class LogisticRegression:
     
-    def __init__():
+    def __init__(self, iterations, learningRate):
         # NOTE: Feel free add any hyperparameters 
         # (with defaults) as you see fit
-        pass
+        self.iterations = iterations
+        self.learningRate = learningRate
         
     def fit(self, X, y):
         """
@@ -21,9 +22,20 @@ class LogisticRegression:
             y (array<m>): a vector of floats containing 
                 m binary 0.0/1.0 labels
         """
-        # TODO: Implement
-        raise NotImplemented()
-    
+        self.w = np.zeros(X.shape[1])       # weights
+        self.b = 0                          # bias
+
+        for _ in range(self.iterations):
+            y_hat = np.dot(X, self.w) + self.b
+            prediction = sigmoid(y_hat)
+            
+            loss = binary_cross_entropy(y, prediction)
+            
+            wError, bError = gradients(X, y, prediction)
+            
+            self.w -= self.learningRate*wError
+            self.b -= self.learningRate*bError
+            
     def predict(self, X):
         """
         Generates predictions
@@ -37,11 +49,11 @@ class LogisticRegression:
         Returns:
             A length m array of floats in the range [0, 1]
             with probability-like predictions
-        """
-        # TODO: Implement
-        raise NotImplemented()
+        """        
+        prediction = np.dot(X, self.w) + self.b
+        probabilities = sigmoid(prediction)
         
-
+        return np.array([1 if p >= 0.5 else 0 for p in probabilities])
         
 # --- Some utility functions 
 
@@ -97,4 +109,10 @@ def sigmoid(x):
     """
     return 1. / (1. + np.exp(-x))
 
-        
+def gradients(X, y_true, y_pred):
+    delta = y_pred - y_true
+    db = np.mean(delta)
+    dw = np.dot(delta, X)
+    dw = np.array([np.mean(gradient) for gradient in dw])
+    
+    return dw, db
