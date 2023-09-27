@@ -1,7 +1,7 @@
 # TDT4173-ML
 Repository for the course TDT4173 Machine Learning at NTNU autumn 2023
 
-# Main project assignment task:
+# Main project assignment task
 
 Build a model that can predict solar energy production for every hour of the next day.
 Problem type is time-series forecasting and regression problem.
@@ -34,10 +34,11 @@ of weather forecasts (x_train_estimated).
 y_test is 30 days. Based on the 24 hours weather forecast, we have to estimate 30 times
 ???
 
+# Evaluation metric
 Evaluation metric is Mean Absolute Error. 30 days x 24 hours x 3 locations
 MAE = 1/n * sum(abs(y - y_hat))
 
-Kaggle
+# Kaggle
 Kaggle is split between a public and private leaderboard. We will just see half of our score during
 the semester, until after the deadline. Grading is dependent on the private leaderboard.
 
