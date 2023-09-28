@@ -4,9 +4,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 class FeaturePlottingFromCSV:
-    def __init__(self, feature_names: list, data_path: str) -> None:       
+    def __init__(self, feature_names: list) -> None:       
         self.feature_names = feature_names
-        self.data_path = data_path
+        self.data_path = os.path.dirname(__file__)
     
     def plot_data(self) -> None:
         data_a = self.load_combined_data('A')
@@ -39,7 +39,7 @@ class FeaturePlottingFromCSV:
         return combined_data
     
     def load_data(self, subdir: str, filename: str) -> pd.DataFrame:
-        data_file_path = os.path.join('data', subdir, 'csv', filename)
+        data_file_path = os.path.join(self.data_path, 'data', subdir, 'csv', filename)
         
         return pd.read_csv(data_file_path)
     
@@ -54,8 +54,8 @@ class FeaturePlottingFromCSV:
     
     
 feature_names = ['diffuse_rad:W', 'direct_rad:W']
-data_path = '../data/'
-feature_plotter = FeaturePlottingFromCSV(feature_names, data_path)
+# data_path = '../data/'
+feature_plotter = FeaturePlottingFromCSV(feature_names)
 feature_plotter.plot_data()
 
 # # Load observed data
