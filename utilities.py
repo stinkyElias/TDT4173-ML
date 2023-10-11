@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 class DataProcessor:
     def __init__(self, data_list):
@@ -122,7 +124,27 @@ def save_to_csv(results, filename):
 
 def create_results_dataframe(test, y_pred):
     results = test.copy()
-    results = results[['hour', 'day_of_week', 'quarter', 'month', 'year', 'day_of_year', 'day_of_month', 'building']]
+    results = results[['hour', 'day_of_week', 'quarter', 'month', 'year', 'day_of_year', 'day_of_month']]
     res_pd = pd.DataFrame(data=y_pred, index=test.index, columns=['pv_prediction'])
     results["pv_prediction"] = pd.DataFrame(data=res_pd)
     return results
+
+def plot_important_features(model):
+    fi = pd.DataFrame(data=model.feature_importances_,
+                  index=model.feature_names_in_,
+                  columns=['importance'])
+    fi.sort_values(by='importance').plot(kind='barh', figsize=(10,15))
+
+
+def plot_results_daily(train,results):
+    fig, ax = plt.subplots(figsize=(12,8))
+    sns.lineplot(data=results[results['building'] == 0], x='day_of_month', y='pv_prediction', label='pv_prediction (building A)')
+    sns.lineplot(data=results[results['building'] == 1], x='day_of_month', y='pv_prediction', label='pv_prediction (building B)')
+    sns.lineplot(data=results[results['building'] == 2], x='day_of_month', y='pv_prediction', label='pv_prediction (building C)')
+    sns.lineplot(data=train[train['building'] == 0], x='day_of_month', y='pv_measurement', label='pv_measured (building A) 2021')
+    sns.lineplot(data=train[train['building'] == 1], x='day_of_month', y='pv_measurement', label='pv_measured (building B) 2021')
+    sns.lineplot(data=train[train['building'] == 2], x='day_of_month', y='pv_measurement', label='pv_measured (building C) 2021')
+    ax.set_title('daily pv_prediction and pv_measurement between May 1st and July 5th')
+    ax.set_ylabel('pv_measurement')
+    ax.set_xlabel('day_of_month')
+    ax.legend()
