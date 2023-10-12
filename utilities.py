@@ -149,3 +149,29 @@ def plot_results_daily(train,results):
     ax.set_ylabel('pv_measurement')
     ax.set_xlabel('day_of_month')
     ax.legend()
+
+def get_features(selector: int) -> list:
+    """
+    Choose the features to use in the model.
+    0: Features from featurewiz without added features from utilities.py
+    1: Features from featurewiz with added features from utilities.py without building
+    2: Features from featurewiz with all added features from utilities.py
+    3: Features from Elias' reasoning (aka AI)
+    """
+    
+    if(selector == 0):
+        return ['direct_rad:W', 'elevation:m', 'sun_elevation:d', 'sun_azimuth:d','air_density_2m:kgm3', 'sfc_pressure:hPa',
+                'wind_speed_u_10m:ms','cloud_base_agl:m', 'ceiling_height_agl:m', 'visibility:m','relative_humidity_1000hPa:p',
+                'wind_speed_v_10m:ms', 'wind_speed_10m:ms','effective_cloud_cover:p', 'fresh_snow_24h:cm','wind_speed_w_1000hPa:ms', 'pv_measurement']
+    elif(selector == 1):
+        return ['direct_rad:W', 'elevation:m','sun_elevation:d', 'sun_azimuth:d', 'day_of_year','air_density_2m:kgm3','wind_speed_u_10m:ms',
+                'msl_pressure:hPa','cloud_base_agl:m','ceiling_height_agl:m', 'visibility:m','wind_speed_10m:ms','year',
+                'relative_humidity_1000hPa:p','wind_speed_v_10m:ms','effective_cloud_cover:p','day_of_month','fresh_snow_24h:cm',
+                'day_of_week','fresh_snow_6h:cm','fresh_snow_1h:cm', 'pv_measurement']
+    elif(selector == 2):
+        return ['direct_rad:W', 'building', 'sun_elevation:d', 'sun_azimuth:d', 'day_of_year','air_density_2m:kgm3','wind_speed_u_10m:ms',
+                'msl_pressure:hPa','cloud_base_agl:m','ceiling_height_agl:m','visibility:m','relative_humidity_1000hPa:p','wind_speed_10m:ms',
+                'effective_cloud_cover:p','day_of_month','year','fresh_snow_24h:cm','fresh_snow_6h:cm','fresh_snow_1h:cm', 'pv_measurement']
+    elif(selector == 3):
+        return ['clear_sky_rad:W', 'diffuse_rad:W', 'direct_rad:W', 'sun_elevation:d', 'is_day:idx', 'total_cloud_cover:p', 'sun_azimuth:d',
+                'wind_speed_10m:ms', 't_1000hPa:K', 'pv_measurement']
