@@ -26,7 +26,7 @@ class DataProcessor:
         self.C_train = pd.concat([self.C_obs, self.C_est.iloc[:, 1:]], axis=0)
 
         self._format_time_index()
-        self._add_time_features()
+        # self._add_time_features()
         self._add_building_feature()
 
         # add the target column to the training data
@@ -41,7 +41,9 @@ class DataProcessor:
             df.sort_index(inplace=True)
 
         # create a features list containing all the features in the top row of A_train
-        FEATURES = list(train.columns)
+        FEATURES = ['direct_rad:W', 'elevation:m', 'sun_elevation:d', 'sun_azimuth:d','air_density_2m:kgm3', 'sfc_pressure:hPa',
+                'wind_speed_u_10m:ms','cloud_base_agl:m', 'ceiling_height_agl:m', 'visibility:m','relative_humidity_1000hPa:p',
+                'wind_speed_v_10m:ms', 'wind_speed_10m:ms','effective_cloud_cover:p','wind_speed_w_1000hPa:ms', 'pv_measurement']
         FEATURES.remove('pv_measurement')
         # FEATURES = ['hour', 'day_of_week', 'quarter', 'month', 'year', 'cloud_base_agl:m']
         TARGET = ['pv_measurement']
