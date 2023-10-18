@@ -49,9 +49,13 @@ class DataProcessor:
         X_train = train[FEATURES]
         y_train = train[TARGET]
 
-        # In both X_train and y_train, we have to remove the rows where pv_measurement is NaN but keep building
-        X_train = X_train[~y_train['pv_measurement'].isna()]
-        y_train = y_train[~y_train['pv_measurement'].isna()]
+        # # In both X_train and y_train, we have to remove the rows where pv_measurement is NaN but keep building
+        # X_train = X_train[~y_train['pv_measurement'].isna()]
+        # y_train = y_train[~y_train['pv_measurement'].isna()]
+
+        # Fill NaN values with 0
+        X_train.fillna(0, inplace=True)
+        y_train.fillna(0, inplace=True)
 
         df = pd.concat([X_train, y_train], axis=1)
 
@@ -156,7 +160,8 @@ def get_features(selector: int) -> list:
     0: Features from featurewiz without added features from utilities.py
     1: Features from featurewiz with added features from utilities.py without building
     2: Features from featurewiz with all added features from utilities.py
-    3: Features from Elias' reasoning (aka AI)
+    3: All feaetures without snow
+    4: Features from featurewiz without added features from utilities.py but removed snow feature
     """
     
     if(selector == 0):
@@ -173,5 +178,12 @@ def get_features(selector: int) -> list:
                 'msl_pressure:hPa','cloud_base_agl:m','ceiling_height_agl:m','visibility:m','relative_humidity_1000hPa:p','wind_speed_10m:ms',
                 'effective_cloud_cover:p','day_of_month','year','fresh_snow_24h:cm','fresh_snow_6h:cm','fresh_snow_1h:cm', 'pv_measurement']
     elif(selector == 3):
-        return ['clear_sky_rad:W', 'diffuse_rad:W', 'direct_rad:W', 'sun_elevation:d', 'is_day:idx', 'total_cloud_cover:p', 'sun_azimuth:d',
-                'wind_speed_10m:ms', 't_1000hPa:K', 'pv_measurement']
+        return ['absolute_humidity_2m:gm3','air_density_2m:kgm3','ceiling_height_agl:m','clear_sky_energy_1h:J','clear_sky_rad:W','cloud_base_agl:m',
+                'dew_or_rime:idx','dew_point_2m:K','diffuse_rad:W','diffuse_rad_1h:J','direct_rad:W','direct_rad_1h:J','effective_cloud_cover:p',
+                'elevation:m','is_day:idx','is_in_shadow:idx','msl_pressure:hPa','precip_5min:mm','precip_type_5min:idx','pressure_100m:hPa','pressure_50m:hPa',
+                'prob_rime:p','rain_water:kgm2','relative_humidity_1000hPa:p','sfc_pressure:hPa','sun_azimuth:d','sun_elevation:d','super_cooled_liquid_water:kgm2',
+                't_1000hPa:K','total_cloud_cover:p','visibility:m','wind_speed_10m:ms','wind_speed_u_10m:ms','wind_speed_v_10m:ms','wind_speed_w_1000hPa:ms']
+    elif(selector == 4):
+        return ['direct_rad:W', 'elevation:m', 'sun_elevation:d', 'sun_azimuth:d','air_density_2m:kgm3', 'sfc_pressure:hPa',
+                'wind_speed_u_10m:ms','cloud_base_agl:m', 'ceiling_height_agl:m', 'visibility:m','relative_humidity_1000hPa:p',
+                'wind_speed_v_10m:ms', 'wind_speed_10m:ms','effective_cloud_cover:p','wind_speed_w_1000hPa:ms', 'pv_measurement']
