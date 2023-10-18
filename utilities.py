@@ -20,6 +20,7 @@ class DataProcessor:
 
     def create_train_data(self):
 
+        # concat the estimated (without the date_calc column) and observed dataframes
         self.A_train = pd.concat([self.A_obs, self.A_est.iloc[:, 1:]], axis=0)
         self.B_train = pd.concat([self.B_obs, self.B_est.iloc[:, 1:]], axis=0)
         self.C_train = pd.concat([self.C_obs, self.C_est.iloc[:, 1:]], axis=0)
@@ -33,26 +34,17 @@ class DataProcessor:
         self.B_train['pv_measurement'] = self.B_target['pv_measurement']
         self.C_train['pv_measurement'] = self.C_target['pv_measurement']
 
-        train = pd.concat([self.A_train, self.B_train, self.C_train], axis=0)
-        target = pd.concat([self.A_target, self.B_target, self.C_target], axis=0)
+        df = pd.concat([self.A_train, self.B_train, self.C_train], axis=0)
 
-        for df in [train, target]:
-            df.sort_index(inplace=True)
+        # for df in [train, target]:
+        df.sort_index(inplace=True)
 
-        # create a features list containing all the features in the top row of A_train
-        FEATURES = list(train.columns)
-        FEATURES.remove('pv_measurement')
-        # FEATURES = ['hour', 'day_of_week', 'quarter', 'month', 'year', 'cloud_base_agl:m']
-        TARGET = ['pv_measurement']
+        # # slive it so that it only contains whole hours
+        # train = train[train.index.hour == 0]
+        # target = target[target.index.hour == 0]
 
-        X_train = train[FEATURES]
-        y_train = train[TARGET]
+        print(df.shape)
 
-        # In both X_train and y_train, we have to remove the rows where pv_measurement is NaN but keep building
-        X_train = X_train[~y_train['pv_measurement'].isna()]
-        y_train = y_train[~y_train['pv_measurement'].isna()]
-
-        df = pd.concat([X_train, y_train], axis=1)
 
         return df
 
@@ -76,6 +68,8 @@ class DataProcessor:
                 df['year'] = df.index.year
                 df['day_of_year'] = df.index.dayofyear
                 df['day_of_month'] = df.index.day
+                df['minute'] = df.index.minute
+                df['day'] = df.index.day    
 
     def _add_building_feature(self):
         for df, building_label in zip(
