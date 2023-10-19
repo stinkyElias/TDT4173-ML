@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data = pd.read_csv('results/h2o_featurewiz_minus_snow.csv')
+data = pd.read_csv('results/catboost_1.csv')
 
 # Plot the data with seaborn
 sns.set_style("whitegrid")
