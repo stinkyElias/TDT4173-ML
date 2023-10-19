@@ -32,31 +32,7 @@ class DataProcessor:
         self.B_train['pv_measurement'] = self.B_target['pv_measurement']
         self.C_train['pv_measurement'] = self.C_target['pv_measurement']
 
-        train = pd.concat([self.A_train, self.B_train, self.C_train], axis=0)
-        target = pd.concat([self.A_target, self.B_target, self.C_target], axis=0)
-
-        for df in [train, target]:
-            df.sort_index(inplace=True)
-
-        # create a features list containing all the features in the top row of A_train
-        FEATURES = ['direct_rad:W', 'elevation:m', 'sun_elevation:d', 'sun_azimuth:d','air_density_2m:kgm3', 'sfc_pressure:hPa',
-                'wind_speed_u_10m:ms','cloud_base_agl:m', 'ceiling_height_agl:m', 'visibility:m','relative_humidity_1000hPa:p',
-                'wind_speed_v_10m:ms', 'wind_speed_10m:ms','effective_cloud_cover:p','wind_speed_w_1000hPa:ms', 'pv_measurement']
-        FEATURES.remove('pv_measurement')
-        TARGET = ['pv_measurement']
-
-        X_train = train[FEATURES]
-        y_train = train[TARGET]
-
-        # # In both X_train and y_train, we have to remove the rows where pv_measurement is NaN but keep building
-        X_train = X_train[~y_train['pv_measurement'].isna()]
-        y_train = y_train[~y_train['pv_measurement'].isna()]
-
-        # Fill NaN values with 0
-        # X_train.fillna(0, inplace=True)
-        # y_train.fillna(0, inplace=True)
-
-        df = pd.concat([X_train, y_train], axis=1)
+        df = pd.concat([self.A_train, self.B_train, self.C_train], axis=0)
 
         return df
 
@@ -65,11 +41,11 @@ class DataProcessor:
         for df in [self.A_train, self.B_train, self.C_train, self.A_test, self.B_test, self.C_test]:
             df['date_forecast'] = pd.to_datetime(df['date_forecast'])
             df.set_index('date_forecast', inplace=True)
-
         # convert the time column to a datetime object and set it as the index
         for df in [self.A_target, self.B_target, self.C_target]:
             df['time'] = pd.to_datetime(df['time'])
             df.set_index('time', inplace=True)
+  
 
 def read_data() -> list:
     A_est = pd.read_parquet('data/A/parquet/X_train_estimated.parquet', engine='pyarrow')
@@ -163,7 +139,7 @@ def get_features(selector: int) -> list:
                 'dew_or_rime:idx','dew_point_2m:K','diffuse_rad:W','diffuse_rad_1h:J','direct_rad:W','direct_rad_1h:J','effective_cloud_cover:p',
                 'elevation:m','is_day:idx','is_in_shadow:idx','msl_pressure:hPa','precip_5min:mm','precip_type_5min:idx','pressure_100m:hPa','pressure_50m:hPa',
                 'prob_rime:p','rain_water:kgm2','relative_humidity_1000hPa:p','sfc_pressure:hPa','sun_azimuth:d','sun_elevation:d','super_cooled_liquid_water:kgm2',
-                't_1000hPa:K','total_cloud_cover:p','visibility:m','wind_speed_10m:ms','wind_speed_u_10m:ms','wind_speed_v_10m:ms','wind_speed_w_1000hPa:ms']
+                't_1000hPa:K','total_cloud_cover:p','visibility:m','wind_speed_10m:ms','wind_speed_u_10m:ms','wind_speed_v_10m:ms','wind_speed_w_1000hPa:ms', 'pv_measurement']
     elif(selector == 4):
         return ['direct_rad:W', 'elevation:m', 'sun_elevation:d', 'sun_azimuth:d','air_density_2m:kgm3', 'sfc_pressure:hPa',
                 'wind_speed_u_10m:ms','cloud_base_agl:m', 'ceiling_height_agl:m', 'visibility:m','relative_humidity_1000hPa:p',
