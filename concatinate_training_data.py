@@ -41,7 +41,7 @@ class ConcatinateTrainingData:
         have no 'date_calc' column, 'date_forecast' is the index and estimated
         and observed are concatenated.
         """
-        # self.delete_date_calc()
+        self.delete_date_calc()
         df = pd.concat([self.train_observed, self.train_estimated],
                                             axis=0)
         concatinated_training_data = self.format_time_index(df)

@@ -44,6 +44,10 @@ class CreateTrainingData:
         target_B = B.import_target_data()
         target_C = C.import_target_data()
 
+        target_A.set_index('time', inplace=True)
+        target_B.set_index('time', inplace=True)
+        target_C.set_index('time', inplace=True)
+
         self.training_A['pv_measurement'] = target_A['pv_measurement']
         self.training_B['pv_measurement'] = target_B['pv_measurement']
         self.training_C['pv_measurement'] = target_C['pv_measurement']
