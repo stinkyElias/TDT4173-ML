@@ -12,10 +12,10 @@ class ConcatinateTrainingData:
 
         Arguments
         ----------
-        train_observed : pd.DataFrame
+        - train_observed : pd.DataFrame
             The observed training data.
         
-        train_estimated : pd.DataFrame
+        - train_estimated : pd.DataFrame
             The estimated training data.
         """
         self.train_observed = train_observed

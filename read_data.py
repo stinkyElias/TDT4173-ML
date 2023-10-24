@@ -11,7 +11,7 @@ class ReadData:
 
         Argument
         ----------
-        location : str
+        - location : str
             The location of the data to be imported. Must be either 'A', 'B' or 'C'.
         """
         self.location = location

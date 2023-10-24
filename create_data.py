@@ -60,6 +60,10 @@ class CreateTrainingData:
 
         return pd.concat([self.training_A, self.training_B, self.training_C], axis=0)
     
+    def create_training_data_with_means(self):
+        self.add_target_to_training_data()
+        
+
 def create_target_data() -> pd.DataFrame:
     """
     Returns a DataFrame with the target data from all locations.
@@ -95,3 +99,4 @@ def create_test_data() -> pd.DataFrame:
     test_data.set_index('date_forecast', inplace=True)
 
     return test_data
+    
