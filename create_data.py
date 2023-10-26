@@ -31,8 +31,34 @@ class CreateTrainingData:
         self.training_A = self.A.concatinate_training_data()
         self.training_B = self.B.concatinate_training_data()
         self.training_C = self.C.concatinate_training_data()
+
+
+        # Create mean instances of the training data
+
+        self.data_A_mean = ReadData('A')
+        self.data_B_mean = ReadData('B')
+        self.data_C_mean = ReadData('C')
+
+        self.train_observed_A_mean = self.data_A_mean.import_train_observed_data()
+        self.train_observed_B_mean = self.data_B_mean.import_train_observed_data()
+        self.train_observed_C_mean = self.data_C_mean.import_train_observed_data()
+
+        self.train_estimated_A_mean = self.data_A_mean.import_train_estimated_data()
+        self.train_estimated_B_mean = self.data_B_mean.import_train_estimated_data()
+        self.train_estimated_C_mean = self.data_C_mean.import_train_estimated_data()
+
+        self.A_mean = ConcatinateTrainingData(self.train_observed_A_mean,
+                                              self.train_estimated_A_mean)
+        self.B_mean = ConcatinateTrainingData(self.train_observed_B_mean,
+                                              self.train_estimated_B_mean)
+        self.C_mean = ConcatinateTrainingData(self.train_observed_C_mean,
+                                              self.train_estimated_C_mean)
+
+        self.training_A_mean = self.A_mean.concatinate_training_data()
+        self.training_B_mean = self.B_mean.concatinate_training_data()
+        self.training_C_mean = self.C_mean.concatinate_training_data()
     
-    def add_target_to_training_data(self) -> None:
+    def add_target_to_training_data(self, mean: bool) -> None:
         """
         Add the target data to the training data.
         """
@@ -48,21 +74,47 @@ class CreateTrainingData:
         target_B.set_index('time', inplace=True)
         target_C.set_index('time', inplace=True)
 
-        self.training_A['pv_measurement'] = target_A['pv_measurement']
-        self.training_B['pv_measurement'] = target_B['pv_measurement']
-        self.training_C['pv_measurement'] = target_C['pv_measurement']
+        if mean == False:    
+            self.training_A['pv_measurement'] = target_A['pv_measurement']
+            self.training_B['pv_measurement'] = target_B['pv_measurement']
+            self.training_C['pv_measurement'] = target_C['pv_measurement']
+        
+        else:
+            self.training_A_mean['pv_measurement'] = target_A['pv_measurement']
+            self.training_B_mean['pv_measurement'] = target_B['pv_measurement']
+            self.training_C_mean['pv_measurement'] = target_C['pv_measurement']
 
-    def create_training_data(self):
+    def create_training_data(self, mean: bool) -> pd.DataFrame:
         """
-        Returns a DataFrame with the training data from all locations.
+        Returns a DataFrame with the training data from all locations. If mean
+        is set to True, the mean values of each hour are used instead of the
+        values from each 15 minutes.
+
+        Argument
+        --------
+        - mean : bool
+            If True, the mean values of each hour are used instead of the values
+            from each 15 minutes.
         """
-        self.add_target_to_training_data()
+        self.add_target_to_training_data(mean=False)
 
         return pd.concat([self.training_A, self.training_B, self.training_C], axis=0)
     
-    def create_training_data_with_means(self):
-        self.add_target_to_training_data()
-        
+    def create_training_data_with_mean_features(self) -> pd.DataFrame:
+        """"
+        Returns a DataFrame where the feature values from each 15 minutes (xx:xx:00, 
+        xx:xx:15, xx:xx:30 and xx:xx:45) are replaced by the mean of the four
+        features and only one row per hour remains. This DataFrame will be 1/4
+        of the size of the DataFrame from create_training_data().
+        """
+        self.training_A_mean = self.training_A_mean.resample('H').mean()
+        self.training_B_mean = self.training_B_mean.resample('H').mean()
+        self.training_C_mean = self.training_C_mean.resample('H').mean()
+
+        self.add_target_to_training_data(mean=True)
+
+        return pd.concat([self.training_A_mean, self.training_B_mean,
+                          self.training_C_mean], axis=0) 
 
 def create_target_data() -> pd.DataFrame:
     """
