@@ -134,7 +134,7 @@ def create_target_data() -> pd.DataFrame:
 
     return target_data
 
-def create_test_data() -> pd.DataFrame:
+def create_test_data(use_mean_values: bool) -> pd.DataFrame:
     """
     Returns a DataFrame with the test data from all locations.
     Index is set to 'date_forecast'.
@@ -147,8 +147,24 @@ def create_test_data() -> pd.DataFrame:
     test_B = data_B.import_test_estimated_data()
     test_C = data_C.import_test_estimated_data()
 
-    test_data = pd.concat([test_A, test_B, test_C], axis=0)
-    test_data.set_index('date_forecast', inplace=True)
+    if use_mean_values == True:      
+        test_A.set_index('date_forecast', inplace=True)
+        test_B.set_index('date_forecast', inplace=True)
+        test_C.set_index('date_forecast', inplace=True)
+        
+        test_A = test_A.resample('H').mean(numeric_only=False)
+        test_B = test_B.resample('H').mean(numeric_only=False)
+        test_C = test_C.resample('H').mean(numeric_only=False)
+
+        test_data = pd.concat([test_A, test_B, test_C], axis=0)
+        
+    else:
+        test_data = pd.concat([test_A, test_B, test_C], axis=0)
+        test_data.set_index('date_forecast', inplace=True)
+
+        test_data.to_csv('test_data.csv')
+
+
+    
 
     return test_data
-    
