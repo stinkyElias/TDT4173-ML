@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import read_data as rd
+from utilities import read_data as rd
 
 def plot_target_data() -> None:
     """

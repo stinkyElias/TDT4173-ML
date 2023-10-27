@@ -21,13 +21,16 @@ class CreateDelivery:
         self.file_name = file_name
         self.pandas_frame = None
 
-    def create_delivery_file(self) -> None:
+    def create_delivery_file(self, use_mean_values: bool) -> None:
         """
         Creates a delivery file in the correct format and saves it in the results folder as a csv file.
         """
         self.pandas_frame = self.convert_H2O_to_pandas()
         self.set_negative_values_to_zeros()
-        self.purge_unnecessary_rows()
+
+        if use_mean_values == False:
+            self.purge_unnecessary_rows()
+        
         self.reformat_index()
 
         self.pandas_frame.insert(0, 'id', range(0, len(self.pandas_frame)))

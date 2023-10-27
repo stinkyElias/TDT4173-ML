@@ -1,6 +1,6 @@
 import h2o
 
-def save_model(model, file_name: str) -> None:
+def save_model_to_local_disk(model, file_name: str) -> None:
     """
     Saves an H2O machine learning model to disk.
 
