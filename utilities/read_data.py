@@ -15,10 +15,10 @@ class ReadData:
             The location of the data to be imported. Must be either 'A', 'B' or 'C'.
         """
         self.location = location
-        self.path_to_target = f'data/{location}/parquet/train_targets.parquet'
-        self.path_to_train_observed = f'data/{location}/parquet/X_train_observed.parquet'
-        self.path_to_train_estimated = f'data/{location}/parquet/X_train_estimated.parquet'
-        self.path_to_test_estimated = f'data/{location}/parquet/X_test_estimated.parquet'
+        self.path_to_target = f'data_raw/{location}/parquet/train_targets.parquet'
+        self.path_to_train_observed = f'data_raw/{location}/parquet/X_train_observed.parquet'
+        self.path_to_train_estimated = f'data_raw/{location}/parquet/X_train_estimated.parquet'
+        self.path_to_test_estimated = f'data_raw/{location}/parquet/X_test_estimated.parquet'
 
     def import_target_data(self) -> pd.DataFrame:
         """

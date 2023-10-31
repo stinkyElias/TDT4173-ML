@@ -35,7 +35,7 @@ class CreateDelivery:
 
         self.pandas_frame.insert(0, 'id', range(0, len(self.pandas_frame)))
         self.pandas_frame.rename(columns={'predict': 'predictions'}, inplace=True)
-        self.pandas_frame.to_csv(f"results/{self.file_name}.csv", index=False)
+        self.pandas_frame.to_csv(f"data_results/{self.file_name}.csv", index=False)
     
     def convert_H2O_to_pandas(self) -> pd.DataFrame:
         """

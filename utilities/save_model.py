@@ -15,6 +15,6 @@ def save_model_to_local_disk(model, file_name: str) -> None:
     Returns:
         None
     """
-    save_model_path = '/home/stinky/Documents/ntnu/ml/models/'
+    save_model_path = '..   /home/models/'
 
     h2o.save_model(model=model, path=save_model_path, force=True, filename=file_name)
