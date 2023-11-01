@@ -1,0 +1,21 @@
+2023-11-01 13:23:01,698:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-01 13:23:01,698:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-01 13:23:01,699:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-01 13:23:01,699:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-01 13:23:26,616:INFO:Initializing load_model()
+2023-11-01 13:23:26,616:INFO:load_model(model_name=/home/henrikraa/git_repos/TDT4173-ML/models_training/01H_pycaret_lgbm_mean_no_feature_eng.pkl, platform=None, authentication=None, verbose=True)
+2023-11-01 13:23:36,200:INFO:Initializing load_model()
+2023-11-01 13:23:36,201:INFO:load_model(model_name=/home/henrikraa/git_repos/TDT4173-ML/models_training/01H_pycaret_lgbm_mean_no_feature_eng, platform=None, authentication=None, verbose=True)
+2023-11-01 13:24:24,185:INFO:Initializing predict_model()
+2023-11-01 13:24:24,185:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7fb61a371190>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', LGBMRegressor(n_jobs=-1, random_state=1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x7fb61a386430>)
+2023-11-01 13:24:24,185:INFO:Checking exceptions
+2023-11-01 13:24:24,185:INFO:Preloading libraries
+2023-11-01 13:24:24,186:INFO:Set up data.
+2023-11-01 13:24:24,205:INFO:Set up index.
