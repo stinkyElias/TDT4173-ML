@@ -1,3 +1,4 @@
+import os
 import h2o
 
 def save_model_to_local_disk(model, file_name: str) -> None:
@@ -11,10 +12,7 @@ def save_model_to_local_disk(model, file_name: str) -> None:
         
     - file_name : str
         A string representing the name of the file to save the model to.
-
-    Returns:
-        None
     """
-    save_model_path = '..   /home/models/'
+    save_model_path = os.path.join(os.path.expanduser('~'), 'Documents/models')
 
     h2o.save_model(model=model, path=save_model_path, force=True, filename=file_name)

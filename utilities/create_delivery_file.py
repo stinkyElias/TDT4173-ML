@@ -1,4 +1,6 @@
+import os
 import pandas as pd
+
 from h2o.frame import H2OFrame
 
 class CreateDelivery:
@@ -18,8 +20,9 @@ class CreateDelivery:
             A string representing the name of the file to be saved
         """
         self.H2O_frame = H2O_frame
-        self.file_name = file_name
         self.pandas_frame = None
+        self.saved_file_path = os.path.join(os.path.expanduser('~'),
+                                'Documents/TDT4173-ML/data_results', file_name)
 
     def create_delivery_file(self, use_mean_values: bool) -> None:
         """
@@ -35,7 +38,7 @@ class CreateDelivery:
 
         self.pandas_frame.insert(0, 'id', range(0, len(self.pandas_frame)))
         self.pandas_frame.rename(columns={'predict': 'predictions'}, inplace=True)
-        self.pandas_frame.to_csv(f"data_results/{self.file_name}.csv", index=False)
+        self.pandas_frame.to_csv(os.path.join(self.saved_file_path), index=False)
     
     def convert_H2O_to_pandas(self) -> pd.DataFrame:
         """

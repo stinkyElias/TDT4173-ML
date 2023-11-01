@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 
 class ReadData:
@@ -15,10 +16,17 @@ class ReadData:
             The location of the data to be imported. Must be either 'A', 'B' or 'C'.
         """
         self.location = location
-        self.path_to_target = f'data_raw/{location}/parquet/train_targets.parquet'
-        self.path_to_train_observed = f'data_raw/{location}/parquet/X_train_observed.parquet'
-        self.path_to_train_estimated = f'data_raw/{location}/parquet/X_train_estimated.parquet'
-        self.path_to_test_estimated = f'data_raw/{location}/parquet/X_test_estimated.parquet'
+        self.home_dir = os.path.expanduser('~')
+        self.data_raw_dir = 'Documents/TDT4173-ML/data_raw'
+        
+        self.path_to_target = os.path.join(self.home_dir, self.data_raw_dir, self.location,
+                                           'parquet/train_targets.parquet')
+        self.path_to_train_observed = os.path.join(self.home_dir, self.data_raw_dir, self.location,
+                                                   'parquet/X_train_observed.parquet')
+        self.path_to_train_estimated = os.path.join(self.home_dir, self.data_raw_dir, self.location,
+                                                    'parquet/X_train_estimated.parquet')
+        self.path_to_test_estimated = os.path.join(self.home_dir, self.data_raw_dir, self.location,
+                                                   'parquet/X_test_estimated.parquet')
 
     def import_target_data(self) -> pd.DataFrame:
         """
