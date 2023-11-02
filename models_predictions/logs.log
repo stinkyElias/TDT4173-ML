@@ -19,3 +19,28 @@
 2023-11-01 13:24:24,185:INFO:Preloading libraries
 2023-11-01 13:24:24,186:INFO:Set up data.
 2023-11-01 13:24:24,205:INFO:Set up index.
+2023-11-02 09:16:30,744:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:16:30,744:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:16:30,744:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:16:30,744:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:45:32,540:INFO:Initializing load_model()
+2023-11-02 09:45:32,540:INFO:load_model(model_name=../models_training/01H_pycaret_lgbm_mean_with_feature_eng, platform=None, authentication=None, verbose=True)
+2023-11-02 09:45:41,569:INFO:Initializing predict_model()
+2023-11-02 09:45:41,570:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f06e7770be0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', LGBMRegressor(n_jobs=-1, random_state=1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x7f06e6cc91f0>)
+2023-11-02 09:45:41,570:INFO:Checking exceptions
+2023-11-02 09:45:41,571:INFO:Preloading libraries
+2023-11-02 09:45:41,571:INFO:Set up data.
+2023-11-02 09:45:41,590:INFO:Set up index.
+2023-11-02 09:47:25,493:WARNING:/tmp/ipykernel_8583/1976895718.py:2: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  predictions_kaggle[predictions_kaggle < 0] = 0
+

@@ -8117,3 +8117,1807 @@ ValueError: DataFrame.dtypes for data must be int, float, bool or category. When
 'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
 2023-11-01 16:26:42,532:WARNING:
 'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:17:20,553:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:17:20,553:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:17:20,553:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:17:20,553:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 09:18:14,995:INFO:PyCaret RegressionExperiment
+2023-11-02 09:18:14,995:INFO:Logging name: reg-default-name
+2023-11-02 09:18:14,995:INFO:ML Usecase: MLUsecase.REGRESSION
+2023-11-02 09:18:14,995:INFO:version 3.1.0
+2023-11-02 09:18:14,995:INFO:Initializing setup()
+2023-11-02 09:18:14,995:INFO:self.USI: 3919
+2023-11-02 09:18:14,995:INFO:self._variable_keys: {'idx', 'fold_groups_param', 'seed', 'X_test', 'logging_param', 'X_train', 'y', 'html_param', 'n_jobs_param', 'gpu_param', 'X', 'gpu_n_jobs_param', 'fold_generator', 'target_param', '_available_plots', 'pipeline', 'exp_name_log', 'memory', 'y_test', 'fold_shuffle_param', 'USI', 'log_plots_param', '_ml_usecase', 'exp_id', 'y_train', 'transform_target_param', 'data'}
+2023-11-02 09:18:14,995:INFO:Checking environment
+2023-11-02 09:18:14,995:INFO:python_version: 3.9.18
+2023-11-02 09:18:14,996:INFO:python_build: ('main', 'Sep 11 2023 13:41:44')
+2023-11-02 09:18:14,996:INFO:machine: x86_64
+2023-11-02 09:18:14,996:INFO:platform: Linux-6.5.0-10006-tuxedo-x86_64-with-glibc2.35
+2023-11-02 09:18:14,996:INFO:Memory: svmem(total=16594501632, available=11270561792, percent=32.1, used=4961849344, free=6021799936, active=5683785728, inactive=3768520704, buffers=421969920, cached=5188882432, shared=11014144, slab=759795712)
+2023-11-02 09:18:14,998:INFO:Physical Core: 6
+2023-11-02 09:18:14,998:INFO:Logical Core: 12
+2023-11-02 09:18:14,999:INFO:Checking libraries
+2023-11-02 09:18:14,999:INFO:System:
+2023-11-02 09:18:14,999:INFO:    python: 3.9.18 (main, Sep 11 2023, 13:41:44)  [GCC 11.2.0]
+2023-11-02 09:18:14,999:INFO:executable: /home/henrikraa/anaconda3/envs/pycaret/bin/python
+2023-11-02 09:18:14,999:INFO:   machine: Linux-6.5.0-10006-tuxedo-x86_64-with-glibc2.35
+2023-11-02 09:18:14,999:INFO:PyCaret required dependencies:
+2023-11-02 09:18:15,659:INFO:                 pip: 23.2.1
+2023-11-02 09:18:15,659:INFO:          setuptools: 68.0.0
+2023-11-02 09:18:15,659:INFO:             pycaret: 3.1.0
+2023-11-02 09:18:15,660:INFO:             IPython: 8.15.0
+2023-11-02 09:18:15,660:INFO:          ipywidgets: 8.0.4
+2023-11-02 09:18:15,660:INFO:                tqdm: 4.65.0
+2023-11-02 09:18:15,660:INFO:               numpy: 1.23.5
+2023-11-02 09:18:15,660:INFO:              pandas: 1.5.3
+2023-11-02 09:18:15,660:INFO:              jinja2: 3.1.2
+2023-11-02 09:18:15,660:INFO:               scipy: 1.10.1
+2023-11-02 09:18:15,660:INFO:              joblib: 1.2.0
+2023-11-02 09:18:15,660:INFO:             sklearn: 1.2.2
+2023-11-02 09:18:15,660:INFO:                pyod: 1.1.1
+2023-11-02 09:18:15,660:INFO:            imblearn: 0.10.1
+2023-11-02 09:18:15,660:INFO:   category_encoders: 2.6.3
+2023-11-02 09:18:15,660:INFO:            lightgbm: 4.1.0
+2023-11-02 09:18:15,660:INFO:               numba: 0.57.1
+2023-11-02 09:18:15,660:INFO:            requests: 2.31.0
+2023-11-02 09:18:15,660:INFO:          matplotlib: 3.7.2
+2023-11-02 09:18:15,660:INFO:          scikitplot: 0.3.7
+2023-11-02 09:18:15,660:INFO:         yellowbrick: 1.5
+2023-11-02 09:18:15,660:INFO:              plotly: 5.9.0
+2023-11-02 09:18:15,660:INFO:    plotly-resampler: Not installed
+2023-11-02 09:18:15,660:INFO:             kaleido: 0.2.1
+2023-11-02 09:18:15,660:INFO:           schemdraw: 0.15
+2023-11-02 09:18:15,660:INFO:         statsmodels: 0.14.0
+2023-11-02 09:18:15,660:INFO:              sktime: 0.21.1
+2023-11-02 09:18:15,660:INFO:               tbats: 1.1.3
+2023-11-02 09:18:15,661:INFO:            pmdarima: 2.0.4
+2023-11-02 09:18:15,661:INFO:              psutil: 5.9.0
+2023-11-02 09:18:15,661:INFO:          markupsafe: 2.1.1
+2023-11-02 09:18:15,661:INFO:             pickle5: Not installed
+2023-11-02 09:18:15,661:INFO:         cloudpickle: 2.2.1
+2023-11-02 09:18:15,661:INFO:         deprecation: 2.1.0
+2023-11-02 09:18:15,661:INFO:              xxhash: 2.0.2
+2023-11-02 09:18:15,661:INFO:           wurlitzer: 3.0.2
+2023-11-02 09:18:15,661:INFO:PyCaret optional dependencies:
+2023-11-02 09:18:15,756:INFO:                shap: Not installed
+2023-11-02 09:18:15,756:INFO:           interpret: Not installed
+2023-11-02 09:18:15,756:INFO:                umap: Not installed
+2023-11-02 09:18:15,756:INFO:     ydata_profiling: Not installed
+2023-11-02 09:18:15,756:INFO:  explainerdashboard: Not installed
+2023-11-02 09:18:15,756:INFO:             autoviz: Not installed
+2023-11-02 09:18:15,756:INFO:           fairlearn: Not installed
+2023-11-02 09:18:15,757:INFO:          deepchecks: Not installed
+2023-11-02 09:18:15,757:INFO:             xgboost: 2.0.1
+2023-11-02 09:18:15,757:INFO:            catboost: 1.2.2
+2023-11-02 09:18:15,757:INFO:              kmodes: 0.12.2
+2023-11-02 09:18:15,757:INFO:             mlxtend: 0.23.0
+2023-11-02 09:18:15,757:INFO:       statsforecast: 1.5.0
+2023-11-02 09:18:15,757:INFO:        tune_sklearn: 0.4.6
+2023-11-02 09:18:15,757:INFO:                 ray: 2.7.1
+2023-11-02 09:18:15,757:INFO:            hyperopt: 0.2.7
+2023-11-02 09:18:15,757:INFO:              optuna: 3.4.0
+2023-11-02 09:18:15,757:INFO:               skopt: 0.9.0
+2023-11-02 09:18:15,757:INFO:              mlflow: Not installed
+2023-11-02 09:18:15,757:INFO:              gradio: Not installed
+2023-11-02 09:18:15,757:INFO:             fastapi: Not installed
+2023-11-02 09:18:15,757:INFO:             uvicorn: Not installed
+2023-11-02 09:18:15,757:INFO:              m2cgen: Not installed
+2023-11-02 09:18:15,757:INFO:           evidently: Not installed
+2023-11-02 09:18:15,757:INFO:               fugue: 0.8.6
+2023-11-02 09:18:15,757:INFO:           streamlit: Not installed
+2023-11-02 09:18:15,757:INFO:             prophet: Not installed
+2023-11-02 09:18:15,757:INFO:None
+2023-11-02 09:18:15,757:INFO:Set up data.
+2023-11-02 09:18:15,851:INFO:Set up folding strategy.
+2023-11-02 09:18:15,851:INFO:Set up train/test split.
+2023-11-02 09:18:15,893:INFO:Set up index.
+2023-11-02 09:18:15,895:INFO:Assigning column types.
+2023-11-02 09:18:15,912:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-11-02 09:18:15,913:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2023-11-02 09:18:15,918:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 09:18:15,924:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,019:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,074:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,075:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:16,078:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:16,174:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,180:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,185:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,270:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,324:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,325:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:16,328:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:16,329:INFO:Engine successfully changes for model 'lasso' to 'sklearn'.
+2023-11-02 09:18:16,334:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,340:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,424:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,478:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,479:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:16,482:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:16,488:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,494:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,580:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,641:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,643:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:16,650:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:16,651:INFO:Engine successfully changes for model 'ridge' to 'sklearn'.
+2023-11-02 09:18:16,662:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,746:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,800:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,801:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:16,804:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:16,816:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,901:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,956:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:16,957:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:16,960:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:16,961:INFO:Engine successfully changes for model 'en' to 'sklearn'.
+2023-11-02 09:18:17,056:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:17,111:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:17,111:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:17,115:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:17,211:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:17,266:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 09:18:17,267:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:17,270:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:17,271:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-11-02 09:18:17,367:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:17,422:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:17,426:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:17,523:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 09:18:17,577:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:17,581:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:17,581:INFO:Engine successfully changes for model 'svm' to 'sklearn'.
+2023-11-02 09:18:17,732:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:17,735:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:17,886:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:17,889:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:17,894:INFO:Set up column name cleaning.
+2023-11-02 09:18:17,946:INFO:Finished creating preprocessing pipeline.
+2023-11-02 09:18:17,948:INFO:Pipeline: Pipeline(memory=FastMemory(location=/tmp/joblib),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames()))])
+2023-11-02 09:18:17,948:INFO:Creating final display dataframe.
+2023-11-02 09:18:18,253:INFO:Setup _display_container:                    Description           Value
+0                   Session id               1
+1                       Target  pv_measurement
+2                  Target type      Regression
+3          Original data shape     (92951, 21)
+4       Transformed data shape     (92951, 21)
+5  Transformed train set shape     (65065, 21)
+6   Transformed test set shape     (27886, 21)
+7             Numeric features              19
+8         Categorical features               1
+9     Rows with missing values           17.9%
+2023-11-02 09:18:18,420:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:18,423:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:18,576:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 09:18:18,579:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 09:18:18,580:INFO:setup() successfully completed in 3.59s...............
+2023-11-02 09:18:42,814:INFO:Initializing compare_models()
+2023-11-02 09:18:42,814:INFO:compare_models(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, include=['dt', 'rf', 'et', 'gbr', 'xgboost', 'lightgbm', 'catboost'], fold=None, round=4, cross_validation=True, sort=R2, n_select=3, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, 'include': ['dt', 'rf', 'et', 'gbr', 'xgboost', 'lightgbm', 'catboost'], 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'R2', 'n_select': 3, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.regression.oop.RegressionExperiment'>}, exclude=None)
+2023-11-02 09:18:42,814:INFO:Checking exceptions
+2023-11-02 09:18:42,827:INFO:Preparing display monitor
+2023-11-02 09:18:42,865:INFO:Initializing Decision Tree Regressor
+2023-11-02 09:18:42,865:INFO:Total runtime is 2.368291219075521e-06 minutes
+2023-11-02 09:18:42,869:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:18:42,869:INFO:Initializing create_model()
+2023-11-02 09:18:42,869:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=dt, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:42,870:INFO:Checking exceptions
+2023-11-02 09:18:42,870:INFO:Importing libraries
+2023-11-02 09:18:42,870:INFO:Copying training dataset
+2023-11-02 09:18:42,896:INFO:Defining folds
+2023-11-02 09:18:42,896:INFO:Declaring metric variables
+2023-11-02 09:18:42,901:INFO:Importing untrained model
+2023-11-02 09:18:42,905:INFO:Decision Tree Regressor Imported successfully
+2023-11-02 09:18:42,914:INFO:Starting cross validation
+2023-11-02 09:18:42,918:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:47,785:WARNING:create_model() for dt raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-11-02 09:18:47,787:WARNING:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1247, in fit
+    super().fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 186, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 579, in _validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1247, in fit
+    super().fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 186, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 579, in _validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:47,788:INFO:Initializing create_model()
+2023-11-02 09:18:47,788:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=dt, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:47,788:INFO:Checking exceptions
+2023-11-02 09:18:47,788:INFO:Importing libraries
+2023-11-02 09:18:47,788:INFO:Copying training dataset
+2023-11-02 09:18:47,820:INFO:Defining folds
+2023-11-02 09:18:47,820:INFO:Declaring metric variables
+2023-11-02 09:18:47,825:INFO:Importing untrained model
+2023-11-02 09:18:47,830:INFO:Decision Tree Regressor Imported successfully
+2023-11-02 09:18:47,838:INFO:Starting cross validation
+2023-11-02 09:18:47,839:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:50,589:ERROR:create_model() for dt raised an exception or returned all 0.0:
+2023-11-02 09:18:50,589:ERROR:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1247, in fit
+    super().fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 186, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 579, in _validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1247, in fit
+    super().fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 186, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 579, in _validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 812, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1247, in fit
+    super().fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 186, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 579, in _validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1247, in fit
+    super().fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 186, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 579, in _validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:50,590:INFO:Initializing Random Forest Regressor
+2023-11-02 09:18:50,590:INFO:Total runtime is 0.1287533164024353 minutes
+2023-11-02 09:18:50,597:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:18:50,597:INFO:Initializing create_model()
+2023-11-02 09:18:50,598:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=rf, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:50,598:INFO:Checking exceptions
+2023-11-02 09:18:50,598:INFO:Importing libraries
+2023-11-02 09:18:50,598:INFO:Copying training dataset
+2023-11-02 09:18:50,640:INFO:Defining folds
+2023-11-02 09:18:50,640:INFO:Declaring metric variables
+2023-11-02 09:18:50,644:INFO:Importing untrained model
+2023-11-02 09:18:50,649:INFO:Random Forest Regressor Imported successfully
+2023-11-02 09:18:50,657:INFO:Starting cross validation
+2023-11-02 09:18:50,658:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:51,101:WARNING:create_model() for rf raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-11-02 09:18:51,101:WARNING:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:51,102:INFO:Initializing create_model()
+2023-11-02 09:18:51,102:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=rf, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:51,102:INFO:Checking exceptions
+2023-11-02 09:18:51,102:INFO:Importing libraries
+2023-11-02 09:18:51,102:INFO:Copying training dataset
+2023-11-02 09:18:51,164:INFO:Defining folds
+2023-11-02 09:18:51,165:INFO:Declaring metric variables
+2023-11-02 09:18:51,172:INFO:Importing untrained model
+2023-11-02 09:18:51,179:INFO:Random Forest Regressor Imported successfully
+2023-11-02 09:18:51,192:INFO:Starting cross validation
+2023-11-02 09:18:51,192:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:51,679:ERROR:create_model() for rf raised an exception or returned all 0.0:
+2023-11-02 09:18:51,680:ERROR:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 812, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:51,680:INFO:Initializing Extra Trees Regressor
+2023-11-02 09:18:51,680:INFO:Total runtime is 0.14693307876586914 minutes
+2023-11-02 09:18:51,690:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:18:51,691:INFO:Initializing create_model()
+2023-11-02 09:18:51,691:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=et, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:51,691:INFO:Checking exceptions
+2023-11-02 09:18:51,691:INFO:Importing libraries
+2023-11-02 09:18:51,691:INFO:Copying training dataset
+2023-11-02 09:18:51,740:INFO:Defining folds
+2023-11-02 09:18:51,740:INFO:Declaring metric variables
+2023-11-02 09:18:51,745:INFO:Importing untrained model
+2023-11-02 09:18:51,749:INFO:Extra Trees Regressor Imported successfully
+2023-11-02 09:18:51,758:INFO:Starting cross validation
+2023-11-02 09:18:51,759:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:52,190:WARNING:create_model() for et raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-11-02 09:18:52,191:WARNING:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:52,191:INFO:Initializing create_model()
+2023-11-02 09:18:52,192:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=et, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:52,192:INFO:Checking exceptions
+2023-11-02 09:18:52,192:INFO:Importing libraries
+2023-11-02 09:18:52,192:INFO:Copying training dataset
+2023-11-02 09:18:52,251:INFO:Defining folds
+2023-11-02 09:18:52,251:INFO:Declaring metric variables
+2023-11-02 09:18:52,259:INFO:Importing untrained model
+2023-11-02 09:18:52,265:INFO:Extra Trees Regressor Imported successfully
+2023-11-02 09:18:52,273:INFO:Starting cross validation
+2023-11-02 09:18:52,274:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:52,717:ERROR:create_model() for et raised an exception or returned all 0.0:
+2023-11-02 09:18:52,718:ERROR:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 812, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_forest.py", line 345, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:52,719:INFO:Initializing Gradient Boosting Regressor
+2023-11-02 09:18:52,719:INFO:Total runtime is 0.16424371798833212 minutes
+2023-11-02 09:18:52,729:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:18:52,730:INFO:Initializing create_model()
+2023-11-02 09:18:52,730:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=gbr, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:52,731:INFO:Checking exceptions
+2023-11-02 09:18:52,731:INFO:Importing libraries
+2023-11-02 09:18:52,731:INFO:Copying training dataset
+2023-11-02 09:18:52,770:INFO:Defining folds
+2023-11-02 09:18:52,771:INFO:Declaring metric variables
+2023-11-02 09:18:52,776:INFO:Importing untrained model
+2023-11-02 09:18:52,780:INFO:Gradient Boosting Regressor Imported successfully
+2023-11-02 09:18:52,789:INFO:Starting cross validation
+2023-11-02 09:18:52,790:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:53,234:WARNING:create_model() for gbr raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-11-02 09:18:53,235:WARNING:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_gb.py", line 429, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_gb.py", line 429, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:53,236:INFO:Initializing create_model()
+2023-11-02 09:18:53,236:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=gbr, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:53,236:INFO:Checking exceptions
+2023-11-02 09:18:53,236:INFO:Importing libraries
+2023-11-02 09:18:53,236:INFO:Copying training dataset
+2023-11-02 09:18:53,290:INFO:Defining folds
+2023-11-02 09:18:53,290:INFO:Declaring metric variables
+2023-11-02 09:18:53,296:INFO:Importing untrained model
+2023-11-02 09:18:53,300:INFO:Gradient Boosting Regressor Imported successfully
+2023-11-02 09:18:53,310:INFO:Starting cross validation
+2023-11-02 09:18:53,310:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:53,780:ERROR:create_model() for gbr raised an exception or returned all 0.0:
+2023-11-02 09:18:53,781:ERROR:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_gb.py", line 429, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_gb.py", line 429, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 812, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+1 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_gb.py", line 429, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2022-11-17 19:00:00'
+
+--------------------------------------------------------------------------------
+9 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/ensemble/_gb.py", line 429, in fit
+    X, y = self._validate_data(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/base.py", line 584, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1106, in check_X_y
+    X = check_array(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/validation.py", line 879, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 185, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pandas/core/generic.py", line 2070, in __array__
+    return np.asarray(self._values, dtype=dtype)
+ValueError: could not convert string to float: '2021-02-12 15:00:00'
+
+
+2023-11-02 09:18:53,782:INFO:Initializing Extreme Gradient Boosting
+2023-11-02 09:18:53,782:INFO:Total runtime is 0.18195632696151734 minutes
+2023-11-02 09:18:53,792:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:18:53,793:INFO:Initializing create_model()
+2023-11-02 09:18:53,793:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=xgboost, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:53,793:INFO:Checking exceptions
+2023-11-02 09:18:53,793:INFO:Importing libraries
+2023-11-02 09:18:53,793:INFO:Copying training dataset
+2023-11-02 09:18:53,849:INFO:Defining folds
+2023-11-02 09:18:53,850:INFO:Declaring metric variables
+2023-11-02 09:18:53,854:INFO:Importing untrained model
+2023-11-02 09:18:53,859:INFO:Extreme Gradient Boosting Imported successfully
+2023-11-02 09:18:53,868:INFO:Starting cross validation
+2023-11-02 09:18:53,868:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:55,110:WARNING:create_model() for xgboost raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-11-02 09:18:55,111:WARNING:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+10 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 1051, in fit
+    train_dmatrix, evals = _wrap_evaluation_matrices(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 534, in _wrap_evaluation_matrices
+    train_dmatrix = create_dmatrix(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 954, in _create_dmatrix
+    return QuantileDMatrix(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 1528, in __init__
+    self._init(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 1587, in _init
+    it.reraise()
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 575, in reraise
+    raise exc  # pylint: disable=raising-bad-type
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 556, in _handle_exception
+    return fn()
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 640, in <lambda>
+    return self._handle_exception(lambda: self.next(input_data), 0)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 1280, in next
+    input_data(**self.kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 623, in input_data
+    new, cat_codes, feature_names, feature_types = _proxy_transform(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 1315, in _proxy_transform
+    arr, feature_names, feature_types = _transform_pandas_df(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 490, in _transform_pandas_df
+    _invalid_dataframe_dtype(data)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 308, in _invalid_dataframe_dtype
+    raise ValueError(msg)
+ValueError: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, The experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:date_forecast: category
+
+
+2023-11-02 09:18:55,112:INFO:Initializing create_model()
+2023-11-02 09:18:55,112:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=xgboost, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:55,112:INFO:Checking exceptions
+2023-11-02 09:18:55,112:INFO:Importing libraries
+2023-11-02 09:18:55,112:INFO:Copying training dataset
+2023-11-02 09:18:55,140:INFO:Defining folds
+2023-11-02 09:18:55,140:INFO:Declaring metric variables
+2023-11-02 09:18:55,145:INFO:Importing untrained model
+2023-11-02 09:18:55,150:INFO:Extreme Gradient Boosting Imported successfully
+2023-11-02 09:18:55,158:INFO:Starting cross validation
+2023-11-02 09:18:55,159:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:18:56,404:ERROR:create_model() for xgboost raised an exception or returned all 0.0:
+2023-11-02 09:18:56,405:ERROR:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+10 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 1051, in fit
+    train_dmatrix, evals = _wrap_evaluation_matrices(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 534, in _wrap_evaluation_matrices
+    train_dmatrix = create_dmatrix(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 954, in _create_dmatrix
+    return QuantileDMatrix(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 1528, in __init__
+    self._init(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 1587, in _init
+    it.reraise()
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 575, in reraise
+    raise exc  # pylint: disable=raising-bad-type
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 556, in _handle_exception
+    return fn()
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 640, in <lambda>
+    return self._handle_exception(lambda: self.next(input_data), 0)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 1280, in next
+    input_data(**self.kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 623, in input_data
+    new, cat_codes, feature_names, feature_types = _proxy_transform(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 1315, in _proxy_transform
+    arr, feature_names, feature_types = _transform_pandas_df(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 490, in _transform_pandas_df
+    _invalid_dataframe_dtype(data)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 308, in _invalid_dataframe_dtype
+    raise ValueError(msg)
+ValueError: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, The experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:date_forecast: category
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 812, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+10 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 1051, in fit
+    train_dmatrix, evals = _wrap_evaluation_matrices(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 534, in _wrap_evaluation_matrices
+    train_dmatrix = create_dmatrix(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/sklearn.py", line 954, in _create_dmatrix
+    return QuantileDMatrix(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 1528, in __init__
+    self._init(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 1587, in _init
+    it.reraise()
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 575, in reraise
+    raise exc  # pylint: disable=raising-bad-type
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 556, in _handle_exception
+    return fn()
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 640, in <lambda>
+    return self._handle_exception(lambda: self.next(input_data), 0)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 1280, in next
+    input_data(**self.kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 729, in inner_f
+    return func(**kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/core.py", line 623, in input_data
+    new, cat_codes, feature_names, feature_types = _proxy_transform(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 1315, in _proxy_transform
+    arr, feature_names, feature_types = _transform_pandas_df(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 490, in _transform_pandas_df
+    _invalid_dataframe_dtype(data)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/xgboost/data.py", line 308, in _invalid_dataframe_dtype
+    raise ValueError(msg)
+ValueError: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, The experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:date_forecast: category
+
+
+2023-11-02 09:18:56,406:INFO:Initializing Light Gradient Boosting Machine
+2023-11-02 09:18:56,406:INFO:Total runtime is 0.22569086154301962 minutes
+2023-11-02 09:18:56,412:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:18:56,413:INFO:Initializing create_model()
+2023-11-02 09:18:56,413:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=lightgbm, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:18:56,413:INFO:Checking exceptions
+2023-11-02 09:18:56,413:INFO:Importing libraries
+2023-11-02 09:18:56,413:INFO:Copying training dataset
+2023-11-02 09:18:56,443:INFO:Defining folds
+2023-11-02 09:18:56,443:INFO:Declaring metric variables
+2023-11-02 09:18:56,448:INFO:Importing untrained model
+2023-11-02 09:18:56,453:INFO:Light Gradient Boosting Machine Imported successfully
+2023-11-02 09:18:56,463:INFO:Starting cross validation
+2023-11-02 09:18:56,464:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:40:52,078:INFO:Calculating mean and std
+2023-11-02 09:40:52,081:INFO:Creating metrics dataframe
+2023-11-02 09:40:52,090:INFO:Uploading results into container
+2023-11-02 09:40:52,091:INFO:Uploading model into container now
+2023-11-02 09:40:52,092:INFO:_master_model_container: 1
+2023-11-02 09:40:52,093:INFO:_display_container: 2
+2023-11-02 09:40:52,093:INFO:LGBMRegressor(n_jobs=-1, random_state=1)
+2023-11-02 09:40:52,093:INFO:create_model() successfully completed......................................
+2023-11-02 09:40:52,239:INFO:SubProcess create_model() end ==================================
+2023-11-02 09:40:52,239:INFO:Creating metrics dataframe
+2023-11-02 09:40:52,252:INFO:Initializing CatBoost Regressor
+2023-11-02 09:40:52,252:INFO:Total runtime is 22.156459271907806 minutes
+2023-11-02 09:40:52,256:INFO:SubProcess create_model() called ==================================
+2023-11-02 09:40:52,257:INFO:Initializing create_model()
+2023-11-02 09:40:52,257:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=catboost, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:40:52,257:INFO:Checking exceptions
+2023-11-02 09:40:52,257:INFO:Importing libraries
+2023-11-02 09:40:52,257:INFO:Copying training dataset
+2023-11-02 09:40:52,283:INFO:Defining folds
+2023-11-02 09:40:52,283:INFO:Declaring metric variables
+2023-11-02 09:40:52,288:INFO:Importing untrained model
+2023-11-02 09:40:52,299:INFO:CatBoost Regressor Imported successfully
+2023-11-02 09:40:52,307:INFO:Starting cross validation
+2023-11-02 09:40:52,308:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:40:53,311:WARNING:create_model() for catboost raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-11-02 09:40:53,311:WARNING:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+10 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 5703, in fit
+    return self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 2303, in _fit
+    train_params = self._prepare_train_params(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 2184, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 1444, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 793, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 1425, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3976, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4026, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3842, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2764, in _catboost._set_features_order_data_pd_data_frame
+_catboost.CatBoostError: features data: pandas.DataFrame column 'date_forecast' has dtype 'category' but is not in  cat_features list
+
+
+2023-11-02 09:40:53,312:INFO:Initializing create_model()
+2023-11-02 09:40:53,312:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=catboost, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7f33d0d6a0d0>, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:40:53,312:INFO:Checking exceptions
+2023-11-02 09:40:53,312:INFO:Importing libraries
+2023-11-02 09:40:53,312:INFO:Copying training dataset
+2023-11-02 09:40:53,349:INFO:Defining folds
+2023-11-02 09:40:53,349:INFO:Declaring metric variables
+2023-11-02 09:40:53,355:INFO:Importing untrained model
+2023-11-02 09:40:53,360:INFO:CatBoost Regressor Imported successfully
+2023-11-02 09:40:53,368:INFO:Starting cross validation
+2023-11-02 09:40:53,369:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:40:56,309:ERROR:create_model() for catboost raised an exception or returned all 0.0:
+2023-11-02 09:40:56,310:ERROR:Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 796, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+10 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 5703, in fit
+    return self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 2303, in _fit
+    train_params = self._prepare_train_params(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 2184, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 1444, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 793, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 1425, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3976, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4026, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3842, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2764, in _catboost._set_features_order_data_pd_data_frame
+_catboost.CatBoostError: features data: pandas.DataFrame column 'date_forecast' has dtype 'category' but is not in  cat_features list
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 812, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1527, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pycaret_experiment/supervised_experiment.py", line 1121, in _create_model_with_cv
+    scores = cross_validate(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 10 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+10 fits failed with the following error:
+Traceback (most recent call last):
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 267, in fit
+    fitted_estimator = self._memory_fit(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/joblib/memory.py", line 349, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/pycaret/internal/pipeline.py", line 66, in _fit_one
+    transformer.fit(*args, **fit_params)
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 5703, in fit
+    return self._fit(X, y, cat_features, text_features, embedding_features, None, sample_weight, None, None, None, None, baseline,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 2303, in _fit
+    train_params = self._prepare_train_params(
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 2184, in _prepare_train_params
+    train_pool = _build_train_pool(X, y, cat_features, text_features, embedding_features, pairs,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 1444, in _build_train_pool
+    train_pool = Pool(X, y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features, pairs=pairs, weight=sample_weight, group_id=group_id,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 793, in __init__
+    self._init(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "/home/henrikraa/anaconda3/envs/pycaret/lib/python3.9/site-packages/catboost/core.py", line 1425, in _init
+    self._init_pool(data, label, cat_features, text_features, embedding_features, embedding_features_data, pairs, weight,
+  File "_catboost.pyx", line 3976, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 4026, in _catboost._PoolBase._init_pool
+  File "_catboost.pyx", line 3842, in _catboost._PoolBase._init_features_order_layout_pool
+  File "_catboost.pyx", line 2764, in _catboost._set_features_order_data_pd_data_frame
+_catboost.CatBoostError: features data: pandas.DataFrame column 'date_forecast' has dtype 'category' but is not in  cat_features list
+
+
+2023-11-02 09:40:56,322:INFO:Initializing create_model()
+2023-11-02 09:40:56,323:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=LGBMRegressor(n_jobs=-1, random_state=1), fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:40:56,323:INFO:Checking exceptions
+2023-11-02 09:40:56,325:INFO:Importing libraries
+2023-11-02 09:40:56,325:INFO:Copying training dataset
+2023-11-02 09:40:56,352:INFO:Defining folds
+2023-11-02 09:40:56,352:INFO:Declaring metric variables
+2023-11-02 09:40:56,353:INFO:Importing untrained model
+2023-11-02 09:40:56,353:INFO:Declaring custom model
+2023-11-02 09:40:56,354:INFO:Light Gradient Boosting Machine Imported successfully
+2023-11-02 09:40:56,354:INFO:Cross validation set to False
+2023-11-02 09:40:56,354:INFO:Fitting Model
+2023-11-02 09:40:56,426:INFO:[LightGBM] [Warning] Categorical features with more bins than the configured maximum bin number found.
+2023-11-02 09:40:56,426:INFO:[LightGBM] [Warning] For categorical features, max_bin and max_bin_by_feature may be ignored with a large number of categories.
+2023-11-02 09:40:56,455:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.003799 seconds.
+2023-11-02 09:40:56,455:INFO:You can set `force_col_wise=true` to remove the overhead.
+2023-11-02 09:40:56,456:INFO:[LightGBM] [Info] Total Bins 13050
+2023-11-02 09:40:56,456:INFO:[LightGBM] [Info] Number of data points in the train set: 65065, number of used features: 20
+2023-11-02 09:40:56,460:INFO:[LightGBM] [Info] Start training from score 288.345624
+2023-11-02 09:40:56,752:INFO:LGBMRegressor(n_jobs=-1, random_state=1)
+2023-11-02 09:40:56,752:INFO:create_model() successfully completed......................................
+2023-11-02 09:40:56,873:INFO:_master_model_container: 1
+2023-11-02 09:40:56,874:INFO:_display_container: 2
+2023-11-02 09:40:56,874:INFO:LGBMRegressor(n_jobs=-1, random_state=1)
+2023-11-02 09:40:56,874:INFO:compare_models() successfully completed......................................
+2023-11-02 09:42:04,364:INFO:Initializing create_model()
+2023-11-02 09:42:04,364:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, estimator=LGBMRegressor(n_jobs=-1, random_state=1), fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=False, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-11-02 09:42:04,364:INFO:Checking exceptions
+2023-11-02 09:42:04,366:INFO:Importing libraries
+2023-11-02 09:42:04,366:INFO:Copying training dataset
+2023-11-02 09:42:04,391:INFO:Defining folds
+2023-11-02 09:42:04,392:INFO:Declaring metric variables
+2023-11-02 09:42:04,392:INFO:Importing untrained model
+2023-11-02 09:42:04,392:INFO:Declaring custom model
+2023-11-02 09:42:04,393:INFO:Light Gradient Boosting Machine Imported successfully
+2023-11-02 09:42:04,393:INFO:Starting cross validation
+2023-11-02 09:42:04,394:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-11-02 09:43:05,075:INFO:Initializing plot_model()
+2023-11-02 09:43:05,075:INFO:plot_model(plot=residuals, fold=None, verbose=True, display=None, display_format=None, estimator=LGBMRegressor(n_jobs=-1, random_state=1), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, system=True)
+2023-11-02 09:43:05,075:INFO:Checking exceptions
+2023-11-02 09:43:05,088:INFO:Preloading libraries
+2023-11-02 09:43:05,115:INFO:Copying training dataset
+2023-11-02 09:43:05,115:INFO:Plot type: residuals
+2023-11-02 09:43:05,443:INFO:Fitting Model
+2023-11-02 09:43:05,608:INFO:Scoring test/hold-out set
+2023-11-02 09:43:07,463:INFO:Visual Rendered Successfully
+2023-11-02 09:43:07,584:INFO:plot_model() successfully completed......................................
+2023-11-02 09:43:09,838:INFO:Initializing plot_model()
+2023-11-02 09:43:09,838:INFO:plot_model(plot=error, fold=None, verbose=True, display=None, display_format=None, estimator=LGBMRegressor(n_jobs=-1, random_state=1), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, system=True)
+2023-11-02 09:43:09,839:INFO:Checking exceptions
+2023-11-02 09:43:09,864:INFO:Preloading libraries
+2023-11-02 09:43:09,919:INFO:Copying training dataset
+2023-11-02 09:43:09,919:INFO:Plot type: error
+2023-11-02 09:43:10,199:INFO:Fitting Model
+2023-11-02 09:43:10,199:INFO:Scoring test/hold-out set
+2023-11-02 09:43:11,000:INFO:Visual Rendered Successfully
+2023-11-02 09:43:11,123:INFO:plot_model() successfully completed......................................
+2023-11-02 09:43:12,955:INFO:Initializing plot_model()
+2023-11-02 09:43:12,955:INFO:plot_model(plot=feature, fold=None, verbose=True, display=None, display_format=None, estimator=LGBMRegressor(n_jobs=-1, random_state=1), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.regression.oop.RegressionExperiment object at 0x7f344c15ad30>, system=True)
+2023-11-02 09:43:12,955:INFO:Checking exceptions
+2023-11-02 09:43:12,967:INFO:Preloading libraries
+2023-11-02 09:43:12,993:INFO:Copying training dataset
+2023-11-02 09:43:12,993:INFO:Plot type: feature
+2023-11-02 09:43:12,994:WARNING:No coef_ found. Trying feature_importances_
+2023-11-02 09:43:13,298:INFO:Visual Rendered Successfully
+2023-11-02 09:43:13,428:INFO:plot_model() successfully completed......................................
+2023-11-02 09:43:29,347:INFO:Initializing save_model()
+2023-11-02 09:43:29,348:INFO:save_model(model=LGBMRegressor(n_jobs=-1, random_state=1), model_name=01H_pycaret_lgbm_mean_with_feature_eng, prep_pipe_=Pipeline(memory=FastMemory(location=/tmp/joblib),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames()))]), verbose=True, use_case=MLUsecase.REGRESSION, kwargs={})
+2023-11-02 09:43:29,348:INFO:Adding model into prep_pipe
+2023-11-02 09:43:29,514:INFO:01H_pycaret_lgbm_mean_with_feature_eng.pkl saved in current working directory
+2023-11-02 09:43:29,517:INFO:Pipeline(memory=Memory(location=None),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', LGBMRegressor(n_jobs=-1, random_state=1))])
+2023-11-02 09:43:29,517:INFO:save_model() successfully completed......................................
+2023-11-02 12:41:06,720:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 12:41:06,720:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 12:41:06,720:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 12:41:06,720:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-11-02 12:41:24,839:INFO:Initializing load_model()
+2023-11-02 12:41:24,839:INFO:load_model(model_name=01H_pycaret_lgbm_mean_with_feature_eng, platform=None, authentication=None, verbose=True)
+2023-11-02 12:42:07,916:INFO:Initializing load_model()
+2023-11-02 12:42:07,916:INFO:load_model(model_name=01H_pycaret_lgbm_mean_with_feature_eng, platform=None, authentication=None, verbose=True)
+2023-11-02 12:42:22,322:INFO:PyCaret RegressionExperiment
+2023-11-02 12:42:22,322:INFO:Logging name: reg-default-name
+2023-11-02 12:42:22,322:INFO:ML Usecase: MLUsecase.REGRESSION
+2023-11-02 12:42:22,322:INFO:version 3.1.0
+2023-11-02 12:42:22,323:INFO:Initializing setup()
+2023-11-02 12:42:22,323:INFO:self.USI: 8ed2
+2023-11-02 12:42:22,323:INFO:self._variable_keys: {'USI', 'gpu_n_jobs_param', 'transform_target_param', 'y_test', 'html_param', 'target_param', 'exp_id', 'gpu_param', 'fold_generator', 'data', 'pipeline', 'seed', 'y', 'idx', 'y_train', 'logging_param', 'n_jobs_param', 'fold_shuffle_param', 'exp_name_log', 'memory', 'X_train', 'log_plots_param', 'X_test', '_ml_usecase', '_available_plots', 'X', 'fold_groups_param'}
+2023-11-02 12:42:22,323:INFO:Checking environment
+2023-11-02 12:42:22,323:INFO:python_version: 3.9.18
+2023-11-02 12:42:22,323:INFO:python_build: ('main', 'Sep 11 2023 13:41:44')
+2023-11-02 12:42:22,323:INFO:machine: x86_64
+2023-11-02 12:42:22,323:INFO:platform: Linux-6.5.0-10006-tuxedo-x86_64-with-glibc2.35
+2023-11-02 12:42:22,323:INFO:Memory: svmem(total=16594501632, available=12862156800, percent=22.5, used=3358298112, free=9304326144, active=2962685952, inactive=3309305856, buffers=298209280, cached=3633668096, shared=23506944, slab=665034752)
+2023-11-02 12:42:22,324:INFO:Physical Core: 6
+2023-11-02 12:42:22,324:INFO:Logical Core: 12
+2023-11-02 12:42:22,324:INFO:Checking libraries
+2023-11-02 12:42:22,324:INFO:System:
+2023-11-02 12:42:22,324:INFO:    python: 3.9.18 (main, Sep 11 2023, 13:41:44)  [GCC 11.2.0]
+2023-11-02 12:42:22,324:INFO:executable: /home/henrikraa/anaconda3/envs/pycaret/bin/python
+2023-11-02 12:42:22,324:INFO:   machine: Linux-6.5.0-10006-tuxedo-x86_64-with-glibc2.35
+2023-11-02 12:42:22,324:INFO:PyCaret required dependencies:
+2023-11-02 12:42:22,324:INFO:                 pip: 23.2.1
+2023-11-02 12:42:22,324:INFO:          setuptools: 68.0.0
+2023-11-02 12:42:22,324:INFO:             pycaret: 3.1.0
+2023-11-02 12:42:22,324:INFO:             IPython: 8.15.0
+2023-11-02 12:42:22,324:INFO:          ipywidgets: 8.0.4
+2023-11-02 12:42:22,324:INFO:                tqdm: 4.65.0
+2023-11-02 12:42:22,324:INFO:               numpy: 1.23.5
+2023-11-02 12:42:22,324:INFO:              pandas: 1.5.3
+2023-11-02 12:42:22,324:INFO:              jinja2: 3.1.2
+2023-11-02 12:42:22,324:INFO:               scipy: 1.10.1
+2023-11-02 12:42:22,324:INFO:              joblib: 1.2.0
+2023-11-02 12:42:22,325:INFO:             sklearn: 1.2.2
+2023-11-02 12:42:22,325:INFO:                pyod: 1.1.1
+2023-11-02 12:42:22,325:INFO:            imblearn: 0.10.1
+2023-11-02 12:42:22,325:INFO:   category_encoders: 2.6.3
+2023-11-02 12:42:22,325:INFO:            lightgbm: 4.1.0
+2023-11-02 12:42:22,325:INFO:               numba: 0.57.1
+2023-11-02 12:42:22,325:INFO:            requests: 2.31.0
+2023-11-02 12:42:22,325:INFO:          matplotlib: 3.7.2
+2023-11-02 12:42:22,325:INFO:          scikitplot: 0.3.7
+2023-11-02 12:42:22,325:INFO:         yellowbrick: 1.5
+2023-11-02 12:42:22,325:INFO:              plotly: 5.9.0
+2023-11-02 12:42:22,325:INFO:    plotly-resampler: Not installed
+2023-11-02 12:42:22,325:INFO:             kaleido: 0.2.1
+2023-11-02 12:42:22,325:INFO:           schemdraw: 0.15
+2023-11-02 12:42:22,325:INFO:         statsmodels: 0.14.0
+2023-11-02 12:42:22,325:INFO:              sktime: 0.21.1
+2023-11-02 12:42:22,325:INFO:               tbats: 1.1.3
+2023-11-02 12:42:22,325:INFO:            pmdarima: 2.0.4
+2023-11-02 12:42:22,325:INFO:              psutil: 5.9.0
+2023-11-02 12:42:22,325:INFO:          markupsafe: 2.1.1
+2023-11-02 12:42:22,325:INFO:             pickle5: Not installed
+2023-11-02 12:42:22,325:INFO:         cloudpickle: 2.2.1
+2023-11-02 12:42:22,325:INFO:         deprecation: 2.1.0
+2023-11-02 12:42:22,325:INFO:              xxhash: 2.0.2
+2023-11-02 12:42:22,325:INFO:           wurlitzer: 3.0.2
+2023-11-02 12:42:22,325:INFO:PyCaret optional dependencies:
+2023-11-02 12:42:22,392:INFO:                shap: Not installed
+2023-11-02 12:42:22,392:INFO:           interpret: Not installed
+2023-11-02 12:42:22,392:INFO:                umap: Not installed
+2023-11-02 12:42:22,392:INFO:     ydata_profiling: Not installed
+2023-11-02 12:42:22,392:INFO:  explainerdashboard: Not installed
+2023-11-02 12:42:22,392:INFO:             autoviz: Not installed
+2023-11-02 12:42:22,392:INFO:           fairlearn: Not installed
+2023-11-02 12:42:22,392:INFO:          deepchecks: Not installed
+2023-11-02 12:42:22,392:INFO:             xgboost: 2.0.1
+2023-11-02 12:42:22,392:INFO:            catboost: 1.2.2
+2023-11-02 12:42:22,392:INFO:              kmodes: 0.12.2
+2023-11-02 12:42:22,392:INFO:             mlxtend: 0.23.0
+2023-11-02 12:42:22,392:INFO:       statsforecast: 1.5.0
+2023-11-02 12:42:22,392:INFO:        tune_sklearn: 0.4.6
+2023-11-02 12:42:22,392:INFO:                 ray: 2.7.1
+2023-11-02 12:42:22,392:INFO:            hyperopt: 0.2.7
+2023-11-02 12:42:22,392:INFO:              optuna: 3.4.0
+2023-11-02 12:42:22,392:INFO:               skopt: 0.9.0
+2023-11-02 12:42:22,392:INFO:              mlflow: Not installed
+2023-11-02 12:42:22,392:INFO:              gradio: Not installed
+2023-11-02 12:42:22,392:INFO:             fastapi: Not installed
+2023-11-02 12:42:22,392:INFO:             uvicorn: Not installed
+2023-11-02 12:42:22,392:INFO:              m2cgen: Not installed
+2023-11-02 12:42:22,392:INFO:           evidently: Not installed
+2023-11-02 12:42:22,392:INFO:               fugue: 0.8.6
+2023-11-02 12:42:22,392:INFO:           streamlit: Not installed
+2023-11-02 12:42:22,392:INFO:             prophet: Not installed
+2023-11-02 12:42:22,392:INFO:None
+2023-11-02 12:42:22,392:INFO:Set up data.
+2023-11-02 12:42:22,453:INFO:Set up folding strategy.
+2023-11-02 12:42:22,453:INFO:Set up train/test split.
+2023-11-02 12:42:22,497:INFO:Set up index.
+2023-11-02 12:42:22,499:INFO:Assigning column types.
+2023-11-02 12:42:22,512:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-11-02 12:42:22,512:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,516:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,519:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,572:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,609:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,610:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:22,612:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:22,687:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,691:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,694:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,748:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,785:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,786:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:22,788:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:22,788:INFO:Engine successfully changes for model 'lasso' to 'sklearn'.
+2023-11-02 12:42:22,792:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,795:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,848:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,884:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,884:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:22,886:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:22,890:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,893:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,948:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,984:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:22,984:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:22,986:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:22,987:INFO:Engine successfully changes for model 'ridge' to 'sklearn'.
+2023-11-02 12:42:22,994:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,059:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,094:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,095:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,096:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,104:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,158:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,192:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,193:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,195:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,195:INFO:Engine successfully changes for model 'en' to 'sklearn'.
+2023-11-02 12:42:23,255:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,288:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,288:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,290:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,350:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,388:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,388:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,391:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,392:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-11-02 12:42:23,459:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,497:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,499:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,565:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2023-11-02 12:42:23,600:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,602:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,602:INFO:Engine successfully changes for model 'svm' to 'sklearn'.
+2023-11-02 12:42:23,699:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,700:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,797:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:23,800:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:23,809:INFO:Set up column name cleaning.
+2023-11-02 12:42:23,837:INFO:Finished creating preprocessing pipeline.
+2023-11-02 12:42:23,838:INFO:Pipeline: Pipeline(memory=FastMemory(location=/tmp/joblib),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames()))])
+2023-11-02 12:42:23,838:INFO:Creating final display dataframe.
+2023-11-02 12:42:24,059:INFO:Setup _display_container:                    Description           Value
+0                   Session id               1
+1                       Target  pv_measurement
+2                  Target type      Regression
+3          Original data shape     (92951, 21)
+4       Transformed data shape     (92951, 21)
+5  Transformed train set shape     (65065, 21)
+6   Transformed test set shape     (27886, 21)
+7             Numeric features              19
+8         Categorical features               1
+9     Rows with missing values           17.9%
+2023-11-02 12:42:24,169:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:24,171:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:24,269:INFO:Soft dependency imported: xgboost: 2.0.1
+2023-11-02 12:42:24,271:INFO:Soft dependency imported: catboost: 1.2.2
+2023-11-02 12:42:24,272:INFO:setup() successfully completed in 1.96s...............
+2023-11-02 12:42:27,626:INFO:Initializing tune_model()
+2023-11-02 12:42:27,626:INFO:tune_model(estimator=Pipeline(memory=Memory(location=None),
+         steps=[('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', LGBMRegressor(n_jobs=-1, random_state=1))]), fold=None, round=4, n_iter=10, custom_grid=None, optimize=R2, custom_scorer=None, search_library=scikit-learn, search_algorithm=None, early_stopping=False, early_stopping_max_iters=10, choose_better=True, fit_kwargs=None, groups=None, return_tuner=False, verbose=True, tuner_verbose=True, return_train_score=False, kwargs={}, self=<pycaret.regression.oop.RegressionExperiment object at 0x7fa69de61a60>)
+2023-11-02 12:42:27,627:INFO:Checking exceptions
+2023-11-02 12:42:27,649:INFO:Copying training dataset
+2023-11-02 12:42:27,662:INFO:Checking base model
+2023-11-02 12:42:27,663:INFO:Base model : Light Gradient Boosting Machine
+2023-11-02 12:42:27,666:INFO:Declaring metric variables
+2023-11-02 12:42:27,670:INFO:Defining Hyperparameters
+2023-11-02 12:42:27,778:INFO:Tuning with n_jobs=-1
+2023-11-02 12:42:27,778:INFO:Initializing RandomizedSearchCV
