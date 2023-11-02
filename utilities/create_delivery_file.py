@@ -24,14 +24,14 @@ class CreateDelivery:
         self.saved_file_path = os.path.join(os.path.expanduser('~'),
                                 'Documents/TDT4173-ML/data_results', file_name)
 
-    def create_delivery_file(self, use_mean_values: bool) -> None:
+    def create_delivery_file(self, use_aggregated_values: bool = True) -> None:
         """
         Creates a delivery file in the correct format and saves it in the results folder as a csv file.
         """
         self.pandas_frame = self.convert_H2O_to_pandas()
         self.set_negative_values_to_zeros()
 
-        if use_mean_values == False:
+        if use_aggregated_values == False:
             self.purge_unnecessary_rows()
         
         self.reformat_index()
