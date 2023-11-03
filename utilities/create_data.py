@@ -181,7 +181,7 @@ class CreateData:
         """
         from sklearn.impute import KNNImputer
 
-        imputer = KNNImputer(n_neighbors=5, weights='uniform', metric='nan_euclidean')
+        imputer = KNNImputer(n_neighbors=2, weights='uniform', metric='nan_euclidean')
 
         data_A_missing = data_A[['ceiling_height_agl:m','cloud_base_agl:m']]
         data_B_missing = data_B[['ceiling_height_agl:m','cloud_base_agl:m']]
