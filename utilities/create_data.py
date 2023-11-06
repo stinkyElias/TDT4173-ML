@@ -181,7 +181,7 @@ class CreateData:
         """
         from sklearn.impute import KNNImputer
 
-        imputer = KNNImputer(n_neighbors=2, weights='uniform', metric='nan_euclidean')
+        imputer = KNNImputer(n_neighbors=5, weights='uniform', metric='nan_euclidean')
 
         data_A_missing = data_A[['ceiling_height_agl:m','cloud_base_agl:m']]
         data_B_missing = data_B[['ceiling_height_agl:m','cloud_base_agl:m']]
@@ -263,14 +263,6 @@ class CreateData:
             If True, the sum of values of each hour are used instead of the values
             from each 15 minutes.
         """
-        # data_A = ReadData('A')
-        # data_B = ReadData('B')
-        # data_C = ReadData('C')
-
-        # test_A = data_A.import_test_estimated_data()
-        # test_B = data_B.import_test_estimated_data()
-        # test_C = data_C.import_test_estimated_data()
-
         if use_mean_values == True or use_median_values == True or use_summed_values == True:
             self.test_A.set_index('date_forecast', inplace=True)
             self.test_B.set_index('date_forecast', inplace=True)
