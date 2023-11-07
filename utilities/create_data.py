@@ -334,7 +334,9 @@ class CreateData:
                 test_data = test_data[~all_zeros]
             
             test_data.dropna(how='all', axis=0, inplace=True)
-            test_data = self.impute_concatinated_data(test_data)
+            
+            if impute_data_after == True:
+                test_data = self.impute_concatinated_data(test_data)
 
         else:
             if impute_data_before == True:

@@ -1,0 +1,177 @@
+Beginning AutoGluon training ...
+AutoGluon will save models to "AutogluonModels/ag-20231107_141746/"
+AutoGluon Version:  0.8.2
+Python Version:     3.10.13
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #37~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  9 15:34:04 UTC 2
+Disk Space Avail:   170.66 GB / 250.38 GB (68.2%)
+Train Data Rows:    92951
+Train Data Columns: 44
+Label Column: pv_measurement
+Preprocessing data ...
+AutoGluon infers your prediction problem is: 'regression' (because dtype of label-column == float and many unique label-values observed).
+	Label info (max, min, mean, stddev): (5733.42, -0.0, 287.23232, 766.67011)
+	If 'regression' is not the correct problem_type, please manually specify the problem_type parameter during predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression'])
+Using Feature Generators to preprocess the data ...
+Fitting AutoMLPipelineFeatureGenerator...
+	Available Memory:                    2691.17 MB
+	Train Data (Original)  Memory Usage: 16.36 MB (0.6% of available memory)
+	Inferring data type of each feature based on column values. Set feature_metadata_in to manually specify special dtypes of the features.
+	Stage 1 Generators:
+		Fitting AsTypeFeatureGenerator...
+	Stage 2 Generators:
+		Fitting FillNaFeatureGenerator...
+	Stage 3 Generators:
+		Fitting IdentityFeatureGenerator...
+	Stage 4 Generators:
+		Fitting DropUniqueFeatureGenerator...
+	Stage 5 Generators:
+		Fitting DropDuplicatesFeatureGenerator...
+	Types of features in original data (raw dtype, special dtypes):
+		('float', []) : 44 | ['absolute_humidity_2m:gm3', 'air_density_2m:kgm3', 'ceiling_height_agl:m', 'clear_sky_energy_1h:J', 'clear_sky_rad:W', ...]
+	Types of features in processed data (raw dtype, special dtypes):
+		('float', []) : 44 | ['absolute_humidity_2m:gm3', 'air_density_2m:kgm3', 'ceiling_height_agl:m', 'clear_sky_energy_1h:J', 'clear_sky_rad:W', ...]
+	0.3s = Fit runtime
+	44 features in original data used to generate 44 features in processed data.
+	Train Data (Processed) Memory Usage: 16.36 MB (0.6% of available memory)
+Data preprocessing and feature engineering runtime = 0.32s ...
+AutoGluon will gauge predictive performance using evaluation metric: 'root_mean_squared_error'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+	To change this, specify the eval_metric parameter of Predictor()
+Automatically generating train/validation split with holdout_frac=0.026895891383632235, Train Rows: 90451, Val Rows: 2500
+User-specified model hyperparameters to be fit:
+{
+	'NN_TORCH': {},
+	'GBM': [{'extra_trees': True, 'ag_args': {'name_suffix': 'XT'}}, {}, 'GBMLarge'],
+	'CAT': {},
+	'XGB': {},
+	'FASTAI': {},
+	'RF': [{'criterion': 'gini', 'ag_args': {'name_suffix': 'Gini', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'entropy', 'ag_args': {'name_suffix': 'Entr', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'squared_error', 'ag_args': {'name_suffix': 'MSE', 'problem_types': ['regression', 'quantile']}}],
+	'XT': [{'criterion': 'gini', 'ag_args': {'name_suffix': 'Gini', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'entropy', 'ag_args': {'name_suffix': 'Entr', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'squared_error', 'ag_args': {'name_suffix': 'MSE', 'problem_types': ['regression', 'quantile']}}],
+	'KNN': [{'weights': 'uniform', 'ag_args': {'name_suffix': 'Unif'}}, {'weights': 'distance', 'ag_args': {'name_suffix': 'Dist'}}],
+}
+Fitting 11 L1 models ...
+Fitting model: KNeighborsUnif ...
+	-664.5504	 = Validation score   (-root_mean_squared_error)
+	0.06s	 = Training   runtime
+	0.48s	 = Validation runtime
+Fitting model: KNeighborsDist ...
+	-807.1167	 = Validation score   (-root_mean_squared_error)
+	0.05s	 = Training   runtime
+	0.47s	 = Validation runtime
+Fitting model: LightGBMXT ...
+No path specified. Models will be saved in: "AutogluonModels/ag-20231107_141848/"
+No path specified. Models will be saved in: "AutogluonModels/ag-20231107_144530/"
+Beginning AutoGluon training ...
+AutoGluon will save models to "AutogluonModels/ag-20231107_144530/"
+AutoGluon Version:  0.8.2
+Python Version:     3.10.13
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #37~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  9 15:34:04 UTC 2
+Disk Space Avail:   170.61 GB / 250.38 GB (68.1%)
+Train Data Rows:    92951
+Train Data Columns: 44
+Label Column: pv_measurement
+Preprocessing data ...
+AutoGluon infers your prediction problem is: 'regression' (because dtype of label-column == float and many unique label-values observed).
+	Label info (max, min, mean, stddev): (5733.42, -0.0, 287.23232, 766.67011)
+	If 'regression' is not the correct problem_type, please manually specify the problem_type parameter during predictor init (You may specify problem_type as one of: ['binary', 'multiclass', 'regression'])
+Using Feature Generators to preprocess the data ...
+Fitting AutoMLPipelineFeatureGenerator...
+	Available Memory:                    2205.57 MB
+	Train Data (Original)  Memory Usage: 16.36 MB (0.7% of available memory)
+	Inferring data type of each feature based on column values. Set feature_metadata_in to manually specify special dtypes of the features.
+	Stage 1 Generators:
+		Fitting AsTypeFeatureGenerator...
+	Stage 2 Generators:
+		Fitting FillNaFeatureGenerator...
+	Stage 3 Generators:
+		Fitting IdentityFeatureGenerator...
+	Stage 4 Generators:
+		Fitting DropUniqueFeatureGenerator...
+	Stage 5 Generators:
+		Fitting DropDuplicatesFeatureGenerator...
+	Types of features in original data (raw dtype, special dtypes):
+		('float', []) : 44 | ['absolute_humidity_2m:gm3', 'air_density_2m:kgm3', 'ceiling_height_agl:m', 'clear_sky_energy_1h:J', 'clear_sky_rad:W', ...]
+	Types of features in processed data (raw dtype, special dtypes):
+		('float', []) : 44 | ['absolute_humidity_2m:gm3', 'air_density_2m:kgm3', 'ceiling_height_agl:m', 'clear_sky_energy_1h:J', 'clear_sky_rad:W', ...]
+	0.3s = Fit runtime
+	44 features in original data used to generate 44 features in processed data.
+	Train Data (Processed) Memory Usage: 16.36 MB (0.7% of available memory)
+Data preprocessing and feature engineering runtime = 0.29s ...
+AutoGluon will gauge predictive performance using evaluation metric: 'root_mean_squared_error'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+	To change this, specify the eval_metric parameter of Predictor()
+Automatically generating train/validation split with holdout_frac=0.026895891383632235, Train Rows: 90451, Val Rows: 2500
+User-specified model hyperparameters to be fit:
+{
+	'NN_TORCH': {},
+	'GBM': [{'extra_trees': True, 'ag_args': {'name_suffix': 'XT'}}, {}, 'GBMLarge'],
+	'CAT': {},
+	'XGB': {},
+	'FASTAI': {},
+	'RF': [{'criterion': 'gini', 'ag_args': {'name_suffix': 'Gini', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'entropy', 'ag_args': {'name_suffix': 'Entr', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'squared_error', 'ag_args': {'name_suffix': 'MSE', 'problem_types': ['regression', 'quantile']}}],
+	'XT': [{'criterion': 'gini', 'ag_args': {'name_suffix': 'Gini', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'entropy', 'ag_args': {'name_suffix': 'Entr', 'problem_types': ['binary', 'multiclass']}}, {'criterion': 'squared_error', 'ag_args': {'name_suffix': 'MSE', 'problem_types': ['regression', 'quantile']}}],
+	'KNN': [{'weights': 'uniform', 'ag_args': {'name_suffix': 'Unif'}}, {'weights': 'distance', 'ag_args': {'name_suffix': 'Dist'}}],
+}
+Fitting 11 L1 models ...
+Fitting model: KNeighborsUnif ...
+	Warning: Potentially not enough memory to safely train model. Estimated to require 0.057 GB out of 2.279 GB available memory (12.571%)... (20.000% of avail memory is the max safe size)
+	To avoid this warning, specify the model hyperparameter "ag.max_memory_usage_ratio" to a larger value (currently 1.0, set to >=0.22 to avoid the warning)
+		To set the same value for all models, do the following when calling predictor.fit: `predictor.fit(..., ag_args_fit={"ag.max_memory_usage_ratio": VALUE})`
+	-664.5504	 = Validation score   (-root_mean_squared_error)
+	0.06s	 = Training   runtime
+	0.49s	 = Validation runtime
+Fitting model: KNeighborsDist ...
+	Warning: Potentially not enough memory to safely train model. Estimated to require 0.057 GB out of 2.307 GB available memory (12.423%)... (20.000% of avail memory is the max safe size)
+	To avoid this warning, specify the model hyperparameter "ag.max_memory_usage_ratio" to a larger value (currently 1.0, set to >=0.22 to avoid the warning)
+		To set the same value for all models, do the following when calling predictor.fit: `predictor.fit(..., ag_args_fit={"ag.max_memory_usage_ratio": VALUE})`
+	-807.1167	 = Validation score   (-root_mean_squared_error)
+	0.06s	 = Training   runtime
+	0.43s	 = Validation runtime
+Fitting model: LightGBMXT ...
+	-229.5822	 = Validation score   (-root_mean_squared_error)
+	24.06s	 = Training   runtime
+	0.62s	 = Validation runtime
+Fitting model: LightGBM ...
+	-212.9053	 = Validation score   (-root_mean_squared_error)
+	37.36s	 = Training   runtime
+	1.43s	 = Validation runtime
+Fitting model: RandomForestMSE ...
+	Warning: Reducing model 'n_estimators' from 300 -> 184 due to low memory. Expected memory usage reduced from 24.35% -> 15.0% of available memory...
+	-242.8661	 = Validation score   (-root_mean_squared_error)
+	105.98s	 = Training   runtime
+	0.05s	 = Validation runtime
+Fitting model: CatBoost ...
+	-216.3435	 = Validation score   (-root_mean_squared_error)
+	173.41s	 = Training   runtime
+	0.01s	 = Validation runtime
+Fitting model: ExtraTreesMSE ...
+	Warning: Reducing model 'n_estimators' from 300 -> 149 due to low memory. Expected memory usage reduced from 30.19% -> 15.0% of available memory...
+	-241.9145	 = Validation score   (-root_mean_squared_error)
+	20.35s	 = Training   runtime
+	0.04s	 = Validation runtime
+Fitting model: NeuralNetFastAI ...
+	-250.0031	 = Validation score   (-root_mean_squared_error)
+	58.24s	 = Training   runtime
+	0.03s	 = Validation runtime
+Fitting model: XGBoost ...
+	-227.7264	 = Validation score   (-root_mean_squared_error)
+	15.83s	 = Training   runtime
+	0.09s	 = Validation runtime
+Fitting model: NeuralNetTorch ...
+	-256.8049	 = Validation score   (-root_mean_squared_error)
+	52.45s	 = Training   runtime
+	0.02s	 = Validation runtime
+Fitting model: LightGBMLarge ...
+	-205.3733	 = Validation score   (-root_mean_squared_error)
+	73.97s	 = Training   runtime
+	2.52s	 = Validation runtime
+Fitting model: WeightedEnsemble_L2 ...
+	-205.055	 = Validation score   (-root_mean_squared_error)
+	0.19s	 = Training   runtime
+	0.01s	 = Validation runtime
+AutoGluon training complete, total runtime = 572.04s ... Best model: "WeightedEnsemble_L2"
+TabularPredictor saved. To load, use: predictor = TabularPredictor.load("AutogluonModels/ag-20231107_144530/")
