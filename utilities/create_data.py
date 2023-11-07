@@ -93,14 +93,15 @@ class CreateData:
     def create_training_data(self, use_mean_values: bool = False,
                              use_median_values: bool = False,
                              use_summed_values: bool = False,
-                             impute_data: bool = False) -> pd.DataFrame:
+                             impute_data_before: bool = False,
+                             impute_data_after: bool = False) -> pd.DataFrame:
         """
         Returns a DataFrame with the training data from all locations. All rows
         where all features are NaN are dropped, including all rows missing values
         in the target column.
         Feature 'snow_density:kgm3' is dropped because we miss 96% of the values.
 
-        Argument
+        Arguments
         --------
         - use_mean_values : bool
             If True, the mean values of each hour are used instead of the values
@@ -114,11 +115,20 @@ class CreateData:
             If True, the sum of values of each hour are used instead of the values
             from each 15 minutes.
         
-        - impute_data : bool
-            If True, missing values are imputed using KNN imputation.
+        - impute_data_before : bool
+            If True, missing values are imputed using KNN imputation before they are
+            concatinated.
+        
+        - impute_data_after : bool
+            If True, missing values are imputed using KNN imputation after they are
+            concatinated.
         """
+        if impute_data_before == True and impute_data_after == True:
+            print("Error: impute_data_before and impute_data_after cannot be True at the same time.")
+            exit() 
+
         if use_mean_values == True or use_median_values == True or use_summed_values == True:
-            if impute_data == True:
+            if impute_data_before == True:
                 self.impute_data(data_A=self.training_A_aggregated_values, 
                                  data_B=self.training_B_aggregated_values,
                                  data_C=self.training_C_aggregated_values,
@@ -144,9 +154,12 @@ class CreateData:
             training_data = pd.concat([self.training_A_aggregated_values,
                                        self.training_B_aggregated_values,
                                        self.training_C_aggregated_values], axis=0)
+            
+            if impute_data_after == True:
+                training_data = self.impute_concatinated_data(training_data)
 
         else:
-            if impute_data == True:
+            if impute_data_before == True:
                 self.impute_data(data_A=self.training_A, data_B=self.training_B,
                                  data_C=self.training_C, use_basic_values=True)
 
@@ -154,9 +167,14 @@ class CreateData:
 
             training_data = pd.concat([self.training_A, self.training_B, self.training_C],
                              axis=0)
+
+            if impute_data_after == True:
+                training_data = self.impute_concatinated_data(training_data)
         
         feature_list = list(training_data.columns)
         feature_list.remove('pv_measurement')
+        feature_list.remove('cloud_base_agl:m')
+        feature_list.remove('ceiling_height_agl:m')
 
         training_data.dropna(how='all', subset=feature_list, axis=0, inplace=True)
         training_data.dropna(how='all', subset=['pv_measurement'], axis=0, inplace=True)
@@ -181,7 +199,7 @@ class CreateData:
         """
         from sklearn.impute import KNNImputer
 
-        imputer = KNNImputer(n_neighbors=5, weights='uniform', metric='nan_euclidean')
+        imputer = KNNImputer(n_neighbors=2, weights='uniform', metric='nan_euclidean')
 
         data_A_missing = data_A[['ceiling_height_agl:m','cloud_base_agl:m']]
         data_B_missing = data_B[['ceiling_height_agl:m','cloud_base_agl:m']]
@@ -243,7 +261,8 @@ class CreateData:
     def create_test_data(self, use_mean_values: bool = False,
                         use_median_values: bool = False,
                         use_summed_values: bool = False,
-                        impute_data: bool = False) -> pd.DataFrame:
+                        impute_data_before: bool = False,
+                        impute_data_after: bool = False) -> pd.DataFrame:
         """
         Returns a DataFrame with the test data from all locations.
         Index is set to 'date_forecast'.
@@ -262,13 +281,25 @@ class CreateData:
         - use_summed_values : bool
             If True, the sum of values of each hour are used instead of the values
             from each 15 minutes.
+        
+        - impute_data_before : bool
+            If True, missing values are imputed using KNN imputation before they are
+            concatinated.
+        
+        -impute_data_after : bool
+            If True, missing values are imputed using KNN imputation after they are
+            concatinated.
         """
+        if impute_data_before == True and impute_data_after == True:
+            print("Error: impute_data_before and impute_data_after cannot be True at the same time.")
+            exit() 
+
         if use_mean_values == True or use_median_values == True or use_summed_values == True:
             self.test_A.set_index('date_forecast', inplace=True)
             self.test_B.set_index('date_forecast', inplace=True)
             self.test_C.set_index('date_forecast', inplace=True)
 
-            if impute_data == True:
+            if impute_data_before == True:
                 self.impute_data(data_A=self.test_A, data_B=self.test_B, data_C=self.test_C,
                                 use_basic_values=False, for_training=False)
             
@@ -279,7 +310,7 @@ class CreateData:
 
                 test_data = pd.concat([self.test_A, self.test_B, self.test_C], axis=0)
 
-                test_data.dropna(how='all', axis=0, inplace=True)
+                # test_data.dropna(how='all', axis=0, inplace=True)
             
             elif use_median_values == True:          
                 self.test_A = self.test_A.resample('H').median(numeric_only=False)
@@ -288,7 +319,7 @@ class CreateData:
 
                 test_data = pd.concat([self.test_A, self.test_B, self.test_C], axis=0)
 
-                test_data.dropna(how='all', axis=0, inplace=True)
+                # test_data.dropna(how='all', axis=0, inplace=True)
             
             elif use_summed_values == True:
                 self.test_A = self.test_A.resample('H').sum(numeric_only=True)
@@ -297,23 +328,65 @@ class CreateData:
 
                 test_data = pd.concat([self.test_A, self.test_B, self.test_C], axis=0)
 
-                test_data.dropna(how='all', axis=0, inplace=True)
+                # test_data.dropna(how='all', axis=0, inplace=True)
 
                 all_zeros = (test_data == 0).all(axis=1)
                 test_data = test_data[~all_zeros]
             
+            test_data.dropna(how='all', axis=0, inplace=True)
+            test_data = self.impute_concatinated_data(test_data)
+
         else:
-            if impute_data == True:
+            if impute_data_before == True:
                 self.impute_data(data_A=self.test_A, data_B=self.test_B, data_C=self.test_C,
                                 use_basic_values=True, for_training=False)
                 
-                test_data = pd.concat([self.test_A, self.test_B, self.test_C], axis=0)
-                test_data.set_index('date_forecast', inplace=True)
+            test_data = pd.concat([self.test_A, self.test_B, self.test_C], axis=0)
+            test_data.set_index('date_forecast', inplace=True)
+            
+            if impute_data_after == True:
+                test_data = self.impute_concatinated_data(test_data)
 
         test_data.drop('snow_density:kgm3', axis=1, inplace=True)
 
         return test_data
-    
+
+    def impute_concatinated_data(self, data: pd.DataFrame) -> pd.DataFrame:
+        """
+        Imputes missing values in the 'ceiling_height_agl:m' and 'cloud_base_agl:m' columns
+        of the input DataFrame using KNNImputer.
+        The imputed values are then concatenated with the original DataFrame and returned.
+
+        Arguments
+        --------
+        - data : pd.DataFrame
+            The input DataFrame containing missing values in the 'ceiling_height_agl:m'
+            and 'cloud_base_agl:m' columns.
+
+        Returns
+        --------
+        - data : pd.DataFrame
+            The input DataFrame with imputed values in the 'ceiling_height_agl:m'
+            and 'cloud_base_agl:m' columns.
+        """
+        from sklearn.impute import KNNImputer
+
+        imputer = KNNImputer(n_neighbors=2, weights='uniform', metric='nan_euclidean')
+
+        data_missing = data[['ceiling_height_agl:m','cloud_base_agl:m']]
+        
+        data.drop(['ceiling_height_agl:m','cloud_base_agl:m'],
+                                axis=1, inplace=True)
+        
+        imputed_data = data_missing.copy()
+
+        imputed_data[['ceiling_height_agl:m','cloud_base_agl:m']] = imputer.fit_transform(data_missing)
+        print("Impute successfull")
+
+        data = pd.concat([data, imputed_data], axis=1)
+
+        return data
+
 def create_target_data() -> pd.DataFrame:
     """
     Returns a DataFrame with the target data from all locations.
