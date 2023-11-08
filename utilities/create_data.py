@@ -7,10 +7,16 @@ class CreateData:
     """
     Concatinates the training data from all locations and returns it as a DataFrame.
     """
-    def __init__(self):
+    def __init__(self, add_estimated_column: bool = False):
         """
         Initialize a CreateTrainingData instance while using the ReadData and
         ConcatinateTrainingData classes.
+
+        Argument
+        --------
+        - add_predicted_column : bool
+            If True, a new feature 'estimated' will be added to training and test data.
+            This value will be 0 if the data is observed and 1 if the data is estimated.
         """
         self.data_A = ReadData('A')
         self.data_B = ReadData('B')
@@ -24,6 +30,31 @@ class CreateData:
         self.train_estimated_B = self.data_B.import_train_estimated_data()
         self.train_estimated_C = self.data_C.import_train_estimated_data()
 
+        self.train_observed_A_aggregated_values = self.train_observed_A.copy()
+        self.train_observed_B_aggregated_values = self.train_observed_B.copy()
+        self.train_observed_C_aggregated_values = self.train_observed_C.copy()
+
+        self.train_estimated_A_aggregated_values = self.train_estimated_A.copy()
+        self.train_estimated_B_aggregated_values = self.train_estimated_B.copy()
+        self.train_estimated_C_aggregated_values = self.train_estimated_C.copy()
+
+        if add_estimated_column == True:
+            self.add_estimated_feature(self.train_observed_A, estimated=False)
+            self.add_estimated_feature(self.train_observed_B, estimated=False)
+            self.add_estimated_feature(self.train_observed_C, estimated=False)
+
+            self.add_estimated_feature(self.train_estimated_A, estimated=True)
+            self.add_estimated_feature(self.train_estimated_B, estimated=True)
+            self.add_estimated_feature(self.train_estimated_C, estimated=True)
+
+            self.add_estimated_feature(self.train_observed_A_aggregated_values, estimated=False)
+            self.add_estimated_feature(self.train_observed_B_aggregated_values, estimated=False)
+            self.add_estimated_feature(self.train_observed_C_aggregated_values, estimated=False)
+
+            self.add_estimated_feature(self.train_estimated_A_aggregated_values, estimated=True)
+            self.add_estimated_feature(self.train_estimated_B_aggregated_values, estimated=True)
+            self.add_estimated_feature(self.train_estimated_C_aggregated_values, estimated=True)
+
         self.A = ConcatinateTrainingData(self.train_observed_A, self.train_estimated_A)
         self.B = ConcatinateTrainingData(self.train_observed_B, self.train_estimated_B)
         self.C = ConcatinateTrainingData(self.train_observed_C, self.train_estimated_C)
@@ -31,18 +62,6 @@ class CreateData:
         self.training_A = self.A.concatinate_training_data()
         self.training_B = self.B.concatinate_training_data()
         self.training_C = self.C.concatinate_training_data()
-
-        self.data_A_aggregated_values = ReadData('A')
-        self.data_B_aggregated_values = ReadData('B')
-        self.data_C_aggregated_values = ReadData('C')
-
-        self.train_observed_A_aggregated_values = self.data_A_aggregated_values.import_train_observed_data()
-        self.train_observed_B_aggregated_values = self.data_B_aggregated_values.import_train_observed_data()
-        self.train_observed_C_aggregated_values = self.data_C_aggregated_values.import_train_observed_data()
-
-        self.train_estimated_A_aggregated_values = self.data_A_aggregated_values.import_train_estimated_data()
-        self.train_estimated_B_aggregated_values = self.data_B_aggregated_values.import_train_estimated_data()
-        self.train_estimated_C_aggregated_values = self.data_C_aggregated_values.import_train_estimated_data()
 
         self.A_aggregated_values = ConcatinateTrainingData(self.train_observed_A_aggregated_values,
                                               self.train_estimated_A_aggregated_values)
@@ -58,6 +77,11 @@ class CreateData:
         self.test_A = self.data_A.import_test_estimated_data()
         self.test_B = self.data_B.import_test_estimated_data()
         self.test_C = self.data_C.import_test_estimated_data()
+
+        if add_estimated_column == True:
+            self.add_estimated_feature(self.test_A, estimated=True)
+            self.add_estimated_feature(self.test_B, estimated=True)
+            self.add_estimated_feature(self.test_C, estimated=True)
     
     def add_target_to_training_data(self, use_aggregated_values: bool) -> None:
         """
@@ -350,6 +374,7 @@ class CreateData:
                 test_data = self.impute_concatinated_data(test_data)
 
         test_data.drop('snow_density:kgm3', axis=1, inplace=True)
+        test_data.drop('date_calc', axis=1, inplace=True)
 
         return test_data
 
@@ -388,6 +413,21 @@ class CreateData:
         data = pd.concat([data, imputed_data], axis=1)
 
         return data
+
+    def add_estimated_feature(self, data: pd.DataFrame, estimated: bool = False) -> None:
+        """
+        Adds a new feature 'estimated' to the input DataFrame.
+        This feature will be 0 if the data is observed and 1 if the data is estimated.
+
+        Argument
+        --------
+        - data : pd.DataFrame
+            The input DataFrame.
+        """
+        if estimated == True:
+            data['estimated'] = 1
+        else:
+            data['estimated'] = 0
 
 def create_target_data() -> pd.DataFrame:
     """
